@@ -1,0 +1,4 @@
+﻿Google icon: https://www.flaticon.com/free-icons/google
+Facebook icon: https://www.flaticon.com/free-icons/facebook
+LinkedIn icon: https://www.flaticon.com/free-icons/linkedin
+Apple icon: https://www.flaticon.com/free-icons/apple (Pixel Buddha)

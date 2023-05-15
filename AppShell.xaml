@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="YouDo.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:YouDo"
+    Shell.FlyoutBehavior="Disabled"
+    xmlns:view="clr-namespace:YouDo.MVVM.View">
+
+    <ShellContent Title="Entrance"
+                  ContentTemplate="{DataTemplate view:EntrancePage}"
+                  Route="EntrancePage"/>
+
+    <ShellContent Title="ForgotPasswordPage"
+                  ContentTemplate="{DataTemplate view:ForgotPasswordPage}"
+                  Route="ForgotPasswordPage"/>
+
+    <ShellContent Title="CreateNewAccountPage"
+                  ContentTemplate="{DataTemplate view:CreateNewAccountPage}"
+                  Route="CreateNewAccountPage"/>
+</Shell>
