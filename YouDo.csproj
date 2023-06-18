@@ -78,6 +78,9 @@
 	  <Compile Update="MVVM\View\CreateNewAccountPage.xaml.cs">
 	    <DependentUpon>CreateNewAccountPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="MVVM\View\MapPage.xaml.cs">
+	    <DependentUpon>MapPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Resources\Localization\AppResource.Designer.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
@@ -106,6 +109,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="MVVM\View\CreateNewAccountPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\View\MapPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

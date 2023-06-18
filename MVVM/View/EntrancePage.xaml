@@ -15,6 +15,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
 
         <!--#region App Logo-->
         <Image Source="app_logo.png"
@@ -31,7 +32,7 @@
                     StrokeShape="RoundRectangle, 10, 10, 0, 0">
 
                 <Entry Placeholder="{x:Static res:AppResource.LoginPageUserinfoPlaceholder}"
-                       Text="{Binding Model.Userinfo}"
+                       Text="{Binding UserInfoModel.Userinfo}"
                        Style="{StaticResource EntranceEntryStyle}"
                        IsEnabled="{Binding IsNotBusy}"
                        Keyboard="Email"/>
@@ -43,7 +44,7 @@
                     StrokeShape="RoundRectangle, 0, 0, 10, 10">
 
                 <Entry Placeholder="{x:Static res:AppResource.LoginPagePasswordPlaceholder}"
-                       Text="{Binding Model.Password}"
+                       Text="{Binding UserInfoModel.Password}"
                        Style="{StaticResource EntranceEntryStyle}"
                        IsEnabled="{Binding IsNotBusy}"
                        IsPassword="True"/>

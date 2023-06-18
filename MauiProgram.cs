@@ -24,12 +24,15 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 		
-		builder.Services.AddSingleton<EntrancePage>();
-		builder.Services.AddTransient<EntrancePageViewModel>();
-        builder.Services.AddTransient<EntrancePageModel>();
+        builder.Services.AddSingleton<EntrancePage>();
+        builder.Services.AddTransient<ForgotPasswordPage>();
+        builder.Services.AddTransient<CreateNewAccountPage>();
+        builder.Services.AddTransient<MapPage>();
 
-        builder.Services.AddSingleton<ForgotPasswordPage>();
-		builder.Services.AddSingleton<CreateNewAccountPage>();
+        builder.Services.AddSingleton<EntrancePageViewModel>();
+        builder.Services.AddTransient<ForgotPasswordViewModel>();
+        builder.Services.AddTransient<CreateNewAccountViewModel>();
+        builder.Services.AddTransient<MapViewmodel>();
 
         return builder.Build();
 	}

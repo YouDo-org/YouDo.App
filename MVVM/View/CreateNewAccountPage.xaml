@@ -5,7 +5,7 @@
              xmlns:res="clr-namespace:YouDo.Resources.Localization"
              xmlns:viewmodel="clr-namespace:YouDo.MVVM.ViewModel"
              xmlns:model="clr-namespace:YouDo.MVVM.Model"
-             x:DataType="viewmodel:EntrancePageViewModel"
+             x:DataType="viewmodel:CreateNewAccountViewModel"
              Title=""
              Shell.NavBarIsVisible="False"
              Background="{AppThemeBinding Light={StaticResource BackgroundLight}, Dark={StaticResource BackgroundDark}}">
@@ -31,7 +31,7 @@
                     StrokeShape="RoundRectangle, 10, 10, 0, 0">
 
                 <Entry Placeholder="{x:Static res:AppResource.RegisterPageUsernamePlaceholder}"
-                       Text="{Binding Model.Userinfo}"
+                       Text="{Binding UserInfoModel.Userinfo}"
                        Style="{StaticResource EntranceEntryStyle}"
                        IsEnabled="{Binding IsNotBusy}"/>
 
@@ -41,7 +41,7 @@
             <Border Style="{StaticResource EntranceBorderStyle}">
 
                 <Entry Placeholder="{x:Static res:AppResource.RegisterPageEmailPlaceholder}"
-                       Text="{Binding Model.Code}"
+                       Text="{Binding UserInfoModel.Code}"
                        Style="{StaticResource EntranceEntryStyle}"
                        IsEnabled="{Binding IsNotBusy}"
                        Keyboard="Email"/>
@@ -52,7 +52,7 @@
             <Border Style="{StaticResource EntranceBorderStyle}">
 
                 <Entry Placeholder="{x:Static res:AppResource.RegisterPagePhonenumberPlaceholder}"
-                       Text="{Binding Model.Password}"
+                       Text="{Binding UserInfoModel.Password}"
                        Style="{StaticResource EntranceEntryStyle}"
                        IsEnabled="{Binding IsNotBusy}"
                        Keyboard="Telephone"/>
@@ -63,11 +63,10 @@
             <Border Style="{StaticResource EntranceBorderStyle}">
 
                 <Entry Placeholder="{x:Static res:AppResource.LoginPagePasswordPlaceholder}"
-                       Text="{Binding Model.Password2}"
+                       Text="{Binding UserInfoModel.Password}"
                        Style="{StaticResource EntranceEntryStyle}"
                        IsEnabled="{Binding IsNotBusy}"
-                       IsPassword="True"
-                       TextChanged="CheckPasswordStrength">
+                       IsPassword="True">
 
                 </Entry>
 
@@ -78,25 +77,19 @@
                     StrokeShape="RoundRectangle, 0, 0, 10, 10">
 
                 <Entry Placeholder="{x:Static res:AppResource.LoginPagePasswordPlaceholder}"
-                       Text="{Binding Model.Password2}"
+                       Text="{Binding UserInfoModel.Password2}"
                        Style="{StaticResource EntranceEntryStyle}"
                        IsEnabled="{Binding IsNotBusy}"
                        IsPassword="True"/>
 
             </Border>
 
-            <Grid ColumnDefinitions="*, *, *, *" ColumnSpacing="5">
-                <Rectangle x:Name="Rect1" HeightRequest="6" Grid.Column="0" Fill="Transparent"/>
-                <Rectangle x:Name="Rect2" HeightRequest="6" Grid.Column="1" Fill="Transparent"/>
-                <Rectangle x:Name="Rect3" HeightRequest="6" Grid.Column="2" Fill="Transparent"/>
-                <Rectangle x:Name="Rect4" HeightRequest="6" Grid.Column="3" Fill="Transparent"/>
-            </Grid>
-
             <!--Register Button-->
             <Border Style="{StaticResource EntranceMainBorder}"
                     StrokeShape="RoundRectangle, 10, 10, 10, 10"
                     BackgroundColor="{AppThemeBinding Light={StaticResource LoginButtonColorLight}, Dark={StaticResource LoginButtonColorLight} }">
 
+                <!--{x:Static res:AppResource.RegisterPageRegisterText}-->
                 <Button Text="{x:Static res:AppResource.RegisterPageRegisterText}"
                         BackgroundColor="{AppThemeBinding Light={StaticResource LoginButtonColorLight}, Dark={StaticResource LoginButtonColorLight} }"
                         TextColor="{StaticResource TextColor}"
