@@ -120,6 +120,9 @@
   <data name="ForgotPasswordAlreadyHaveAnAccount" xml:space="preserve">
     <value>Bir hesabınız var mı?</value>
   </data>
+  <data name="ForgotPasswordCode" xml:space="preserve">
+    <value>Kod</value>
+  </data>
   <data name="ForgotPasswordCodeText" xml:space="preserve">
     <value>Kod</value>
   </data>
@@ -135,6 +138,9 @@
   </data>
   <data name="InternetConnectionMessage" xml:space="preserve">
     <value>Lütfen internet bağlantınızı kontrol ediniz.</value>
+  </data>
+  <data name="LoginPageCreateAccount" xml:space="preserve">
+    <value>Hesap Oluştur</value>
   </data>
   <data name="LoginPageForgotPassword" xml:space="preserve">
     <value>Şifreni mi unuttun?</value>
@@ -152,7 +158,10 @@
     <value>Şifre</value>
   </data>
   <data name="LoginPageUserinfoPlaceholder" xml:space="preserve">
-    <value>Kullanıcı adı, cep telefonu veya email</value>
+    <value>Kullanıcı adı</value>
+  </data>
+  <data name="LoginPageWelcomText" xml:space="preserve">
+    <value>Hoş Geldiniz!</value>
   </data>
   <data name="RegisterPageEmailPlaceholder" xml:space="preserve">
     <value>E-mail</value>

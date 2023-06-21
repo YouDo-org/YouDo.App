@@ -62,7 +62,11 @@
 	  <None Remove="Resources\Images\facebook_icon.png" />
 	  <None Remove="Resources\Images\google_icon.png" />
 	  <None Remove="Resources\Images\linkedin_icon.png" />
+	  <None Remove="Resources\Images\lock.png" />
+	  <None Remove="Resources\Images\lock.svg" />
 	  <None Remove="Resources\Images\logo.png" />
+	  <None Remove="Resources\Images\usericon.png" />
+	  <None Remove="Resources\Images\usericon.svg" />
 	</ItemGroup>
 
 	<ItemGroup>

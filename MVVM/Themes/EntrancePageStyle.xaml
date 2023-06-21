@@ -6,28 +6,50 @@
     <!--
         EntrancePage, ForgotPasswordPage, CreateNewAccountPage
         is using this ResourceDictionary
-    --> 
+    -->
+    <Style x:Key="EntranceEntryBorderStyle" TargetType="Border">
+        <Setter Property="HeightRequest" Value="55"/>
+        <Setter Property="StrokeThickness" Value="3"/>
+        <Setter Property="Stroke" Value="{StaticResource BackgroundBlue1}"/>
+        <Setter Property="StrokeShape" Value="RoundRectangle 7, 7, 7, 7"/>
+    </Style>
+
+    <Style x:Key="EntranceEntryEntryStyle" TargetType="Entry">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Margin" Value="10, 0, 0, 0"/>
+    </Style>
+
+    <Style x:Key="EntranceEntryLabelStyle" TargetType="Label">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Margin" Value="20, -2, 0, 0"/>
+        <Setter Property="Padding" Value="5, -4"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="VerticalOptions" Value="Start"/>
+    </Style>
     
+    
+
     <Style x:Key="EntranceMainBorder" TargetType="Border">
         <Setter Property="StrokeThickness" Value="0"/>
         <Setter Property="StrokeShape" Value="RoundRectangle 0, 0, 0, 0"/>
     </Style>
 
-    <Style x:Key="EntranceBorderStyle" BasedOn="{StaticResource EntranceMainBorder}" TargetType="Border">
+    <Style x:Key="EntranceBorderStyle" TargetType="Border">
         <Setter Property="Padding" Value="10"/>
+        <Setter Property="Margin" Value="10, 0"/>
         <Setter Property="HeightRequest" Value="62"/>
-        <Setter Property="Background" Value="{AppThemeBinding Dark={StaticResource UserEntryColorDark}, Light={StaticResource UserEntryColorLight}}"/>
-        <Setter Property="Stroke" Value="{AppThemeBinding Dark={StaticResource UserEntryColorDark}, Light={StaticResource UserEntryColorLight}}"/>
+        <Setter Property="StrokeThickness" Value="4"/>
+        <Setter Property="Stroke" Value="{StaticResource BackgroundBlue1}"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundLight}"/>
+        <Setter Property="StrokeShape" Value="RoundRectangle 25, 25, 25, 25"/>
     </Style>
 
     <Style x:Key="EntranceEntryStyle" TargetType="Entry">
-        <Setter Property="TextColor" Value="{StaticResource UserEntryTextColor}"/>
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="FontFamily" Value="RobotoRegular"/>
-        <Setter Property="VerticalTextAlignment" Value="Center"/>
-        <Setter Property="VerticalOptions" Value="Center"/>
-        <Setter Property="Margin" Value="10, 0, 0, -3"/>
-        <Setter Property="Background" Value="{AppThemeBinding Dark={StaticResource UserEntryColorDark}, Light={StaticResource UserEntryColorLight}}"/>
+        <Setter Property="TextColor" Value="{StaticResource BackgroundBlue1}"/>
+        <Setter Property="Background" Value="#00000000"/>
+        <Setter Property="Margin" Value="5, -5, 5, -5"/>
     </Style>
 
     <Style x:Key="EntranceNavigationButtonStyle" TargetType="Button">

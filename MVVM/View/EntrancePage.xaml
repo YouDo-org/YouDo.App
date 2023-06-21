@@ -7,88 +7,104 @@
              xmlns:model="clr-namespace:YouDo.MVVM.Model"
              x:DataType="viewmodel:EntrancePageViewModel"
              Title=""
-             Background="{AppThemeBinding Light={StaticResource BackgroundLight}, Dark={StaticResource BackgroundDark}}">
+             Background="{StaticResource BackgroundLight}">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        
+        <Ellipse Fill="{StaticResource BackgroundBlue1}"
+                 WidthRequest="375"
+                 HeightRequest="375"
+                 Margin="0, 0, 300, 850"/>
 
-        <!--#region App Logo-->
-        <Image Source="app_logo.png"
-               Grid.Row="0"
-               Style="{StaticResource AppLogo}"/>
-        <!--#endregion-->
 
-        <!--#region Username, phonenumber, email, password-->
-        <VerticalStackLayout Grid.Row="1" 
-                             Style="{StaticResource InfoStack}">
+        <VerticalStackLayout HorizontalOptions="Center"
+                             VerticalOptions="End"
+                             WidthRequest="330"
+                             HeightRequest="520"
+                             Margin="0, 0, 0, 65"
+                             Spacing="5">
 
-            <!--Username, phonenumber, email-->
-            <Border Style="{StaticResource EntranceBorderStyle}"
-                    StrokeShape="RoundRectangle, 10, 10, 0, 0">
+            <Label Text="{x:Static res:AppResource.LoginPageWelcomText}"
+                   FontSize="25"
+                   FontAttributes="Bold"
+                   CharacterSpacing="1.1"/>
 
-                <Entry Placeholder="{x:Static res:AppResource.LoginPageUserinfoPlaceholder}"
-                       Text="{Binding UserInfoModel.Userinfo}"
-                       Style="{StaticResource EntranceEntryStyle}"
-                       IsEnabled="{Binding IsNotBusy}"
-                       Keyboard="Email"/>
+            <Label Text="{x:Static res:AppResource.LoginPageLoginButtonText}"
+                   FontSize="40"
+                   FontAttributes="Bold"
+                   Margin="0, 0, 0, 40"/>
 
+
+            <!--#region Username-->
+            <Grid Margin="0, 0, 0, 20">
+                <Border Style="{StaticResource EntranceEntryBorderStyle}">
+                    <Entry Placeholder="{x:Static res:AppResource.LoginPageUserinfoPlaceholder}"
+                           Style="{StaticResource EntranceEntryEntryStyle}"
+                           Keyboard="Chat"/>
+                </Border>
+
+                <Label Text="{x:Static res:AppResource.LoginPageUserinfoPlaceholder}"
+                       Style="{StaticResource EntranceEntryLabelStyle}"/>
+            </Grid>
+            <!--#endregion-->
+
+            <!--#region Password-->
+            <Grid Margin="0, 0, 0, 30">
+                <Border Style="{StaticResource EntranceEntryBorderStyle}">
+                    <Entry Placeholder="{x:Static res:AppResource.LoginPagePasswordPlaceholder}"
+                           Style="{StaticResource EntranceEntryEntryStyle}"
+                           Keyboard="Chat"/>
+                </Border>
+
+                <Label Text="{x:Static res:AppResource.LoginPagePasswordPlaceholder}"
+                       Style="{StaticResource EntranceEntryLabelStyle}"/>
+            </Grid>
+            <!--#endregion-->
+
+
+            <!--#region Login Button-->
+            <Border StrokeShape="RoundRectangle  60, 60, 60, 60"
+                    WidthRequest="170"
+                    HeightRequest="60"
+                    Margin="0, 0, 0, 40">
+                <Button Background="{StaticResource BackgroundBlue1}"
+                        Text="{x:Static res:AppResource.LoginPageLoginButtonText}"
+                        FontAttributes="Bold"
+                        FontSize="Header"/>
             </Border>
+            <!--#endregion-->
 
-            <!--Password-->
-            <Border Style="{StaticResource EntranceBorderStyle}"
-                    StrokeShape="RoundRectangle, 0, 0, 10, 10">
+            <!--#region Forgot Password-->
+            <Label HorizontalOptions="Center"
+                   Margin="0, 0, 0, 70">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding MoveToForgotPasswordCommand}"/>
+                </Label.GestureRecognizers>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{x:Static res:AppResource.LoginPageForgotPassword}"
+                              FontSize="16"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <!--#endregion-->
 
-                <Entry Placeholder="{x:Static res:AppResource.LoginPagePasswordPlaceholder}"
-                       Text="{Binding UserInfoModel.Password}"
-                       Style="{StaticResource EntranceEntryStyle}"
-                       IsEnabled="{Binding IsNotBusy}"
-                       IsPassword="True"/>
-
-            </Border>
-
-            <!--Login Button-->
-            <Border Style="{StaticResource EntranceMainBorder}"
-                    StrokeShape="RoundRectangle, 10, 10, 10, 10"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource LoginButtonColorLight}, Dark={StaticResource LoginButtonColorLight} }">
-
-                <Button Text="{x:Static res:AppResource.LoginPageLoginButtonText}"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource LoginButtonColorLight}, Dark={StaticResource LoginButtonColorLight} }"
-                        TextColor="{StaticResource TextColor}"
-                        Command="{Binding LoginCommand}"
-                        IsEnabled="{Binding IsNotBusy}"/>
-
-            </Border>
-
-            <!--Forgot Password-->
-            <Button Text="{x:Static res:AppResource.LoginPageForgotPassword}"
-                    TextColor="{StaticResource TextColor}"
-                    Command="{Binding MoveToForgotPasswordCommand}"
-                    Style="{StaticResource EntranceNavigationButtonStyle}"/>
-
+            <!--#region Create Account-->
+            <Label HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding MoveToCreateNewAccountCommand}"/>
+                </Label.GestureRecognizers>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{x:Static res:AppResource.LoginPageNoAccount}"
+                              FontSize="16"/>
+                        <Span Text="{x:Static res:AppResource.LoginPageCreateAccount}"
+                              TextColor="{StaticResource BackgroundBlue1}"
+                              FontSize="16"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <!--#endregion-->
         </VerticalStackLayout>
-        <!--#endregion-->
-        
-        <!--#region Create New Account-->
-        <Border Grid.Row="2"
-                HeightRequest="45"
-                VerticalOptions="End"
-                Background="Transparent"
-                StrokeThickness="3"
-                Stroke="{StaticResource TextColor}"
-                Margin="21, 0, 21, 87">
 
-            <Button TextColor="{StaticResource TextColor}"
-                    Text="{x:Static res:AppResource.LoginPageNoAccount}"
-                    Command="{Binding MoveToCreateNewAccountCommand}"
-                    Style="{StaticResource EntranceNavigationButtonStyle}"
-                    Margin="0"/>
-        </Border>
-        <!--#endregion-->
     </Grid>
-    
 </ContentPage>

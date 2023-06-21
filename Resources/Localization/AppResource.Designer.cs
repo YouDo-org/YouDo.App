@@ -72,6 +72,15 @@ namespace YouDo.Resources.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Code.
         /// </summary>
+        internal static string ForgotPasswordCode {
+            get {
+                return ResourceManager.GetString("ForgotPasswordCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code.
+        /// </summary>
         internal static string ForgotPasswordCodeText {
             get {
                 return ResourceManager.GetString("ForgotPasswordCodeText", resourceCulture);
@@ -115,7 +124,16 @@ namespace YouDo.Resources.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Forgot your password?.
+        ///   Looks up a localized string similar to Create Account.
+        /// </summary>
+        internal static string LoginPageCreateAccount {
+            get {
+                return ResourceManager.GetString("LoginPageCreateAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forgot Password?.
         /// </summary>
         internal static string LoginPageForgotPassword {
             get {
@@ -133,7 +151,7 @@ namespace YouDo.Resources.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Don&apos;t have an account?.
+        ///   Looks up a localized string similar to Don&apos;t have an account? .
         /// </summary>
         internal static string LoginPageNoAccount {
             get {
@@ -160,11 +178,20 @@ namespace YouDo.Resources.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Username, phone number or email.
+        ///   Looks up a localized string similar to Username.
         /// </summary>
         internal static string LoginPageUserinfoPlaceholder {
             get {
                 return ResourceManager.GetString("LoginPageUserinfoPlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome!.
+        /// </summary>
+        internal static string LoginPageWelcomText {
+            get {
+                return ResourceManager.GetString("LoginPageWelcomText", resourceCulture);
             }
         }
         
