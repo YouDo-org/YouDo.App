@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YouDo.MVVM.View.EntranceView.CreateNewAccountPage"
+             xmlns:res="clr-namespace:YouDo.Resources.Localization"
+             xmlns:viewmodel="clr-namespace:YouDo.MVVM.ViewModel.EntranceViewModels"
+             xmlns:model="clr-namespace:YouDo.MVVM.Model.EntranceModels"
+             x:DataType="viewmodel:CreateNewAccountViewModel"
+             Title=""
+             Shell.NavBarIsVisible="False"
+             Background="{StaticResource BackgroundLight}">
+
+    <Grid>
+        <!--#region Go Back Button-->
+        <Border StrokeShape="RoundRectangle 40, 40, 40, 40"
+                StrokeThickness="0"
+                WidthRequest="50"
+                HeightRequest="50"
+                VerticalOptions="Start"
+                HorizontalOptions="End"
+                Margin="10"
+                Stroke="{StaticResource BackgroundBlue1}">
+            <Button Text="x"
+                    FontAttributes="Bold"
+                    VerticalOptions="Start"
+                    Background="{StaticResource BackgroundBlue1}"
+                    TextColor="White"
+                    Command="{Binding MoveToEntranceCommand}"/>
+        </Border>
+        <!--#endregion-->
+
+        <VerticalStackLayout HorizontalOptions="Center"
+                             VerticalOptions="End"
+                             WidthRequest="330"
+                             HeightRequest="520"
+                             Margin="0, 0, 0, 150"
+                             Spacing="0">
+
+            <Label Text="{x:Static res:AppResource.LoginPageWelcomText}"
+                   FontSize="25"
+                   FontAttributes="Bold"
+                   Margin="0, 0, 0, 10"/>
+
+            <Label Text="{x:Static res:AppResource.RegisterPageRegisterText}"
+                   FontSize="40"
+                   FontAttributes="Bold"
+                   Margin="0, 0, 0, 40"/>
+
+
+            <!--#region Username-->
+            <Grid Margin="0, 0, 0, 20">
+                <Border Style="{StaticResource EntranceEntryBorderStyle}">
+                    <Entry Placeholder="{x:Static res:AppResource.LoginPageUserinfoPlaceholder}"
+                           Style="{StaticResource EntranceEntryEntryStyle}"
+                           Keyboard="Chat"/>
+                </Border>
+
+                <Label Text="{x:Static res:AppResource.LoginPageUserinfoPlaceholder}"
+                       Style="{StaticResource EntranceEntryLabelStyle}"/>
+            </Grid>
+            <!--#endregion-->
+
+            <!--#region Email-->
+            <Grid Margin="0, 0, 0, 20">
+                <Border Style="{StaticResource EntranceEntryBorderStyle}">
+                    <Entry Placeholder="{x:Static res:AppResource.RegisterPageEmailPlaceholder}"
+                           Style="{StaticResource EntranceEntryEntryStyle}"
+                           Keyboard="Chat"/>
+                </Border>
+
+                <Label Text="{x:Static res:AppResource.RegisterPageEmailPlaceholder}"
+                       Style="{StaticResource EntranceEntryLabelStyle}"/>
+            </Grid>
+            <!--#endregion-->
+
+            <!--#region Email-->
+            <Grid Margin="0, 0, 0, 20">
+                <Border Style="{StaticResource EntranceEntryBorderStyle}">
+                    <Entry Placeholder="{x:Static res:AppResource.RegisterPagePhonenumberPlaceholder}"
+                           Style="{StaticResource EntranceEntryEntryStyle}"
+                           Keyboard="Chat"/>
+                </Border>
+
+                <Label Text="{x:Static res:AppResource.RegisterPagePhonenumberPlaceholder}"
+                       Style="{StaticResource EntranceEntryLabelStyle}"/>
+            </Grid>
+            <!--#endregion-->
+
+            <!--#region Password 1-->
+            <Grid Margin="0, 0, 0, 30">
+                <Border Style="{StaticResource EntranceEntryBorderStyle}">
+                    <Entry Placeholder="{x:Static res:AppResource.LoginPagePasswordPlaceholder}"
+                           Style="{StaticResource EntranceEntryEntryStyle}"
+                           Keyboard="Chat"/>
+                </Border>
+
+                <Label Text="{x:Static res:AppResource.LoginPagePasswordPlaceholder}"
+                       Style="{StaticResource EntranceEntryLabelStyle}"/>
+            </Grid>
+            <!--#endregion-->
+
+            <!--#region Password 2-->
+            <Grid Margin="0, 0, 0, 30">
+                <Border Style="{StaticResource EntranceEntryBorderStyle}">
+                    <Entry Placeholder="{x:Static res:AppResource.LoginPagePasswordPlaceholder}"
+                           Style="{StaticResource EntranceEntryEntryStyle}"
+                           Keyboard="Chat"/>
+                </Border>
+
+                <Label Text="{x:Static res:AppResource.LoginPagePasswordPlaceholder}"
+                       Style="{StaticResource EntranceEntryLabelStyle}"/>
+            </Grid>
+            <!--#endregion-->
+
+            <!--#region Register Button-->
+            <Border StrokeShape="RoundRectangle  60, 60, 60, 60"
+                    WidthRequest="170"
+                    HeightRequest="60"
+                    Margin="0, 0, 0, 40">
+                <Button Background="{StaticResource BackgroundBlue1}"
+                        Text="{x:Static res:AppResource.RegisterPageRegisterText}"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        Command="{Binding RegisterCommand}"/>
+            </Border>
+            <!--#endregion-->
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

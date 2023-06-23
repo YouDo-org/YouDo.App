@@ -5,21 +5,47 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:YouDo"
     Shell.FlyoutBehavior="Disabled"
-    xmlns:view="clr-namespace:YouDo.MVVM.View">
+    xmlns:entranceview="clr-namespace:YouDo.MVVM.View.EntranceView"
+    xmlns:mainview="clr-namespace:YouDo.MVVM.View.MainViews">
 
+
+    <!--#region Entrance View Settings-->
     <ShellContent Title="Entrance"
-                  ContentTemplate="{DataTemplate view:EntrancePage}"
+                  ContentTemplate="{DataTemplate entranceview:EntrancePage}"
                   Route="EntrancePage"/>
 
     <ShellContent Title="ForgotPasswordPage"
-                  ContentTemplate="{DataTemplate view:ForgotPasswordPage}"
+                  ContentTemplate="{DataTemplate entranceview:ForgotPasswordPage}"
                   Route="ForgotPasswordPage"/>
 
     <ShellContent Title="CreateNewAccountPage"
-                  ContentTemplate="{DataTemplate view:CreateNewAccountPage}"
+                  ContentTemplate="{DataTemplate entranceview:CreateNewAccountPage}"
                   Route="CreateNewAccountPage"/>
+    <!--#endregion-->
 
+    <!--#region Main View Settings-->
     <ShellContent Title="MapPage"
-                  ContentTemplate="{DataTemplate view:MapPage}"
+                  ContentTemplate="{DataTemplate mainview:MapPage}"
                   Route="MapPage"/>
+
+    <ShellContent Title="BlogPage"
+                  ContentTemplate="{DataTemplate mainview:BlogPage}"
+                  Route="BlogPage"/>
+
+    <ShellContent Title="CampaignsPage"
+                  ContentTemplate="{DataTemplate mainview:CampaignsPage}"
+                  Route="CampaignsPage"/>
+
+    <ShellContent Title="CreatePage"
+                  ContentTemplate="{DataTemplate mainview:CreatePage}"
+                  Route="CreatePage"/>
+
+    <ShellContent Title="EventsPage"
+                  ContentTemplate="{DataTemplate mainview:EventsPage}"
+                  Route="EventsPage"/>
+
+    <ShellContent Title="ProfilePage"
+                  ContentTemplate="{DataTemplate mainview:ProfilePage}"
+                  Route="ProfilePage"/>
+    <!--#endregion-->
 </Shell>

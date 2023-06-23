@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YouDo.MVVM.View.EntranceView.EntrancePage"
+             xmlns:res="clr-namespace:YouDo.Resources.Localization"
+             xmlns:viewmodel="clr-namespace:YouDo.MVVM.ViewModel.EntranceViewModels"
+             xmlns:model="clr-namespace:YouDo.MVVM.Model.EntranceModels"
+             x:DataType="viewmodel:EntrancePageViewModel"
+             Title=""
+             Background="{StaticResource BackgroundLight}">
+
+    <Grid>
+        <Ellipse Fill="{StaticResource BackgroundBlue1}"
+                 WidthRequest="375"
+                 HeightRequest="375"
+                 Margin="0, 0, 300, 850"/>
+
+
+        <VerticalStackLayout HorizontalOptions="Center"
+                             VerticalOptions="End"
+                             WidthRequest="330"
+                             HeightRequest="520"
+                             Margin="0, 0, 0, 65"
+                             Spacing="5">
+
+            <Label Text="{x:Static res:AppResource.LoginPageWelcomText}"
+                   FontSize="25"
+                   FontAttributes="Bold"
+                   CharacterSpacing="1.1"/>
+
+            <Label Text="{x:Static res:AppResource.LoginPageLoginButtonText}"
+                   FontSize="40"
+                   FontAttributes="Bold"
+                   Margin="0, 0, 0, 40"/>
+
+
+            <!--#region Username-->
+            <Grid Margin="0, 0, 0, 20">
+                <Border Style="{StaticResource EntranceEntryBorderStyle}">
+                    <Entry Placeholder="{x:Static res:AppResource.LoginPageUserinfoPlaceholder}"
+                           Style="{StaticResource EntranceEntryEntryStyle}"
+                           Keyboard="Chat"/>
+                </Border>
+
+                <Label Text="{x:Static res:AppResource.LoginPageUserinfoPlaceholder}"
+                       Style="{StaticResource EntranceEntryLabelStyle}"/>
+            </Grid>
+            <!--#endregion-->
+
+            <!--#region Password-->
+            <Grid Margin="0, 0, 0, 30">
+                <Border Style="{StaticResource EntranceEntryBorderStyle}">
+                    <Entry Placeholder="{x:Static res:AppResource.LoginPagePasswordPlaceholder}"
+                           Style="{StaticResource EntranceEntryEntryStyle}"
+                           Keyboard="Chat"/>
+                </Border>
+
+                <Label Text="{x:Static res:AppResource.LoginPagePasswordPlaceholder}"
+                       Style="{StaticResource EntranceEntryLabelStyle}"/>
+            </Grid>
+            <!--#endregion-->
+
+
+            <!--#region Login Button-->
+            <Border StrokeShape="RoundRectangle  60, 60, 60, 60"
+                    WidthRequest="170"
+                    HeightRequest="60"
+                    Margin="0, 0, 0, 40">
+                <Button Background="{StaticResource BackgroundBlue1}"
+                        Text="{x:Static res:AppResource.LoginPageLoginButtonText}"
+                        Command="{Binding LoginCommand}"
+                        FontAttributes="Bold"
+                        FontSize="Header"/>
+            </Border>
+            <!--#endregion-->
+
+            <!--#region Forgot Password-->
+            <Label HorizontalOptions="Center"
+                   Margin="0, 0, 0, 70">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding MoveToForgotPasswordCommand}"/>
+                </Label.GestureRecognizers>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{x:Static res:AppResource.LoginPageForgotPassword}"
+                              FontSize="16"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <!--#endregion-->
+
+            <!--#region Create Account-->
+            <Label HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding MoveToCreateNewAccountCommand}"/>
+                </Label.GestureRecognizers>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{x:Static res:AppResource.LoginPageNoAccount}"
+                              FontSize="16"/>
+                        <Span Text="{x:Static res:AppResource.LoginPageCreateAccount}"
+                              TextColor="{StaticResource BackgroundBlue1}"
+                              FontSize="16"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <!--#endregion-->
+        </VerticalStackLayout>
+
+    </Grid>
+</ContentPage>

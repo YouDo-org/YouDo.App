@@ -39,7 +39,6 @@
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -57,33 +56,35 @@
 	  <None Remove="Assets\**" />
 	</ItemGroup>
 	<ItemGroup>
-	  <None Remove="Resources\Images\apple_icon.png" />
-	  <None Remove="Resources\Images\apple_icon_light.png" />
-	  <None Remove="Resources\Images\facebook_icon.png" />
-	  <None Remove="Resources\Images\google_icon.png" />
-	  <None Remove="Resources\Images\linkedin_icon.png" />
-	  <None Remove="Resources\Images\lock.png" />
-	  <None Remove="Resources\Images\lock.svg" />
+	  <None Remove="Resources\Fonts\Lobster-Regular.ttf" />
+	  <None Remove="Resources\Fonts\Pacifico-Regular.ttf" />
+	  <None Remove="Resources\Images\blog.png" />
+	  <None Remove="Resources\Images\campaigns.png" />
+	  <None Remove="Resources\Images\create.png" />
+	  <None Remove="Resources\Images\events.png" />
 	  <None Remove="Resources\Images\logo.png" />
-	  <None Remove="Resources\Images\usericon.png" />
-	  <None Remove="Resources\Images\usericon.svg" />
+	  <None Remove="Resources\Images\map.png" />
+	  <None Remove="Resources\Images\userimage.png" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
-		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.81" />
+		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.86" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="MVVM\View\ForgotPasswordPage.xaml.cs">
+	  <Compile Update="MVVM\View\EntranceViews\ForgotPasswordPage.xaml.cs">
 	    <DependentUpon>ForgotPasswordPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="MVVM\View\CreateNewAccountPage.xaml.cs">
+	  <Compile Update="MVVM\View\EntranceViews\CreateNewAccountPage.xaml.cs">
 	    <DependentUpon>CreateNewAccountPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="MVVM\View\MapPage.xaml.cs">
+	  <Compile Update="MVVM\View\MainViews\MapPage.xaml.cs">
 	    <DependentUpon>MapPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="MVVM\View\MainViews\BottomNavigationBar.xaml.cs">
+	    <DependentUpon>BottomNavigationBar.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Resources\Localization\AppResource.Designer.cs">
 	    <DesignTime>True</DesignTime>
@@ -100,7 +101,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="MVVM\View\EntrancePage.xaml">
+	  <MauiXaml Update="MVVM\Themes\MapPageStyle.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\View\EntranceViews\EntrancePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="MVVM\Themes\EntrancePageStyle.xaml">
@@ -109,21 +113,36 @@
 	  <MauiXaml Update="MVVM\Themes\ThemeColors.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MVVM\View\ForgotPasswordPage.xaml">
+	  <MauiXaml Update="MVVM\View\EntranceViews\ForgotPasswordPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MVVM\View\CreateNewAccountPage.xaml">
+	  <MauiXaml Update="MVVM\View\EntranceViews\CreateNewAccountPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MVVM\View\MapPage.xaml">
+	  <MauiXaml Update="MVVM\View\MainViews\BlogPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiImage Update="Resources\Images\app_logo.png">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </MauiImage>
+	  <MauiXaml Update="MVVM\View\MainViews\CampaignsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\View\MainViews\CreatePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\View\MainViews\EventsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\View\MainViews\MapPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\View\MainViews\BottomNavigationBar.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\View\MainViews\ProfilePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\View\MainViews\TopNavigationBar.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>
