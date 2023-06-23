@@ -9,29 +9,34 @@
               Grid.Row="2">
 
 
-        <Image WidthRequest="20"
-                   HeightRequest="20"
-                   Source="map.png"
-                   Grid.Column="0"/>
+        <ImageButton WidthRequest="20"
+                     HeightRequest="20"
+                     Source="map.png"
+                     Grid.Column="0"
+                     Clicked="NavigateMap"/>
 
-        <Image WidthRequest="20"
-                   HeightRequest="20"
-                   Source="events.png"
-                   Grid.Column="1"/>
+        <ImageButton WidthRequest="20"
+                     HeightRequest="20"
+                     Source="events.png"
+                     Grid.Column="1"
+                     Clicked="NavigateEvents"/>
 
-        <Image WidthRequest="20"
-                   HeightRequest="20"
-                   Source="create.png"
-                   Grid.Column="2"/>
+        <ImageButton WidthRequest="20"
+                     HeightRequest="20"
+                     Source="create.png"
+                     Grid.Column="2"
+                     Clicked="NavigateCreate"/>
 
-        <Image WidthRequest="20"
-                   HeightRequest="20"
-                   Source="campaigns.png"
-                   Grid.Column="3"/>
+        <ImageButton WidthRequest="20"
+                     HeightRequest="20"
+                     Source="campaigns.png"
+                     Grid.Column="3"
+                     Clicked="NavigateCampaigns"/>
 
-        <Image WidthRequest="20"
-                   HeightRequest="20"
-                   Source="events.png"
-                   Grid.Column="4"/>
+        <ImageButton WidthRequest="20"
+                     HeightRequest="20"
+                     Source="blog.png"
+                     Grid.Column="4"
+                     Clicked="NavigateBlog"/>
     </Grid>
 </ContentView>

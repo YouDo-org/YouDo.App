@@ -4,14 +4,21 @@
              x:Class="YouDo.MVVM.View.MainViews.ProfilePage"
              xmlns:res="clr-namespace:YouDo.Resources.Localization"
              xmlns:viewmodel="clr-namespace:YouDo.MVVM.ViewModel.MainViewModels"
+             xmlns:views="clr-namespace:YouDo.MVVM.View.MainViews"
              x:DataType="viewmodel:ProfileViewModel"
              Title=""
              Shell.NavBarIsVisible="False"
              Background="{StaticResource BackgroundLight}">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
+    <Grid RowDefinitions="50, *, 50">
+
+        <views:TopNavigationBar Grid.Row="0"/>
+
+        <Label Grid.Row="1"
+            Text="Profile"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+        <views:BottomNavigationBar Grid.Row="2"/>
+
+    </Grid>
 </ContentPage>
