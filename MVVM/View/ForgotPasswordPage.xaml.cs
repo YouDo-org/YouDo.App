@@ -4,8 +4,9 @@ using System.Diagnostics;
 namespace YouDo.MVVM.View;
 
 public partial class ForgotPasswordPage : ContentPage {
-	public ForgotPasswordPage(EntrancePageViewModel viewModel) {
-		InitializeComponent();
-		BindingContext = viewModel;
-	}
+
+    public ForgotPasswordPage(ForgotPasswordViewModel viewModel) {
+        InitializeComponent();
+        BindingContext = viewModel;
+    }
 }

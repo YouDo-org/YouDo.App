@@ -414,7 +414,7 @@
         <Setter Property="Fill" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
     </Style>
 
-    <Style TargetType="local:Hyperlink">
+    <Style TargetType="local:HyperlinkSpan">
         <Setter Property="TextColor" Value="{StaticResource Primary}"/>
     </Style>
 

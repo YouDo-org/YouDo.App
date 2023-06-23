@@ -18,4 +18,8 @@
     <ShellContent Title="CreateNewAccountPage"
                   ContentTemplate="{DataTemplate view:CreateNewAccountPage}"
                   Route="CreateNewAccountPage"/>
+
+    <ShellContent Title="MapPage"
+                  ContentTemplate="{DataTemplate view:MapPage}"
+                  Route="MapPage"/>
 </Shell>

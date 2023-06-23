@@ -1,13 +1,14 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace YouDo.MVVM.Model {
-    public class EntrancePageModel {
-        
-        private string username = "";
+    public class UserInfoModel{
+
+        private string username;
         private string code = "";
         private string userinfo = "";
         private string email = "";
@@ -16,6 +17,7 @@ namespace YouDo.MVVM.Model {
         private string password2 = "";
 
 
+        
         public string Username { get { return username; } set { username = value; } }
         public string Code { get { return code; } set { code = value; } } // forgot password
         public string Userinfo { get { return userinfo; } set { userinfo = value; } } // main entrance page

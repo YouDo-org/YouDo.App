@@ -62,7 +62,11 @@
 	  <None Remove="Resources\Images\facebook_icon.png" />
 	  <None Remove="Resources\Images\google_icon.png" />
 	  <None Remove="Resources\Images\linkedin_icon.png" />
+	  <None Remove="Resources\Images\lock.png" />
+	  <None Remove="Resources\Images\lock.svg" />
 	  <None Remove="Resources\Images\logo.png" />
+	  <None Remove="Resources\Images\usericon.png" />
+	  <None Remove="Resources\Images\usericon.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -77,6 +81,9 @@
 	  </Compile>
 	  <Compile Update="MVVM\View\CreateNewAccountPage.xaml.cs">
 	    <DependentUpon>CreateNewAccountPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="MVVM\View\MapPage.xaml.cs">
+	    <DependentUpon>MapPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Resources\Localization\AppResource.Designer.cs">
 	    <DesignTime>True</DesignTime>
@@ -106,6 +113,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="MVVM\View\CreateNewAccountPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\View\MapPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
