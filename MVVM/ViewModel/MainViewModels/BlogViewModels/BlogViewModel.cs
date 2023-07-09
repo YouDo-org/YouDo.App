@@ -11,8 +11,10 @@ public partial class BlogViewModel : BaseViewModel {
     public ObservableCollection<BlogContentModel> blogContents;
 
     public BlogViewModel() {
-        blogContents = new ObservableCollection<BlogContentModel>() { };
-        blogContents.Add(new BlogContentModel { UserName = "Jack", UserDefenition = "Software Developer", BlogContent = "Hi Guys" }); 
+        blogContents = new ObservableCollection<BlogContentModel> {
+            new BlogContentModel("John", "Developer", "Hello", DateTime.Now),
+            new BlogContentModel("Alice", "Designer", "Hi there", DateTime.Now)
+        };
     }
 }
 

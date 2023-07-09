@@ -18,5 +18,42 @@ namespace YouDo.MVVM.Model.MainModels.BlogModels {
 
         [ObservableProperty]
         public string blogContent = "";
+
+        private DateTime releaseDate;
+        public string time {
+            get { return FormatDateTime(); }
+            set { }
+        }
+
+
+        // public string time = DateTime.Now - ReleaseDate;
+
+        public BlogContentModel(string username, string userdefenition, string blogcontent, DateTime releasedate) {
+            UserName = username;
+            UserDefenition = userdefenition;
+            BlogContent = blogcontent;
+            releaseDate = releasedate;
+        }
+
+        public string FormatDateTime() {
+            TimeSpan timeDifference = DateTime.Now - releaseDate;
+
+            if (timeDifference.TotalMinutes < 1) {
+                return "Now";
+            } else if (timeDifference.TotalHours < 1) {
+                return $"{timeDifference.Minutes} min";
+            } else if (timeDifference.TotalDays < 1) {
+                return $"{timeDifference.Hours} hour";
+            } else if (timeDifference.TotalDays < 2) {
+                return "Dün";
+            } else if (timeDifference.TotalDays < 7) {
+                return $"{timeDifference.Days} day";
+            } else if (timeDifference.TotalDays > 365) {
+                return $"{timeDifference.TotalDays/365} year";
+            }
+            return "";
+
+        }
+
     }
 }
