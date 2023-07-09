@@ -1,4 +1,4 @@
-using YouDo.MVVM.ViewModel.MainViewModels;
+using YouDo.MVVM.ViewModel.MainViewModels.BlogViewModels;
 
 namespace YouDo.MVVM.View.MainViews;
 

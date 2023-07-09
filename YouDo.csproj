@@ -119,7 +119,7 @@
 	  <MauiXaml Update="MVVM\View\EntranceViews\CreateNewAccountPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MVVM\View\MainViews\BlogPage.xaml">
+	  <MauiXaml Update="MVVM\View\MainViews\BlogViews\BlogPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="MVVM\View\MainViews\CampaignsPage.xaml">

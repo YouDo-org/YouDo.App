@@ -5,10 +5,10 @@ namespace YouDo.MVVM.ViewModel {
     public partial class BaseViewModel : ObservableObject {
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(IsNotBusy))]
-        bool isBusy;
+        public bool isBusy;
 
         [ObservableProperty]
-        string title;
+        public string title;
 
         public bool IsNotBusy => !IsBusy;
     }

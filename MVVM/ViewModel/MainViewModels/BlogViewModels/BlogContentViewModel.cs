@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YouDo.MVVM.ViewModel.MainViewModels;
-public partial class BlogViewModel {
-    public BlogViewModel() { 
-    
+namespace YouDo.MVVM.ViewModel.MainViewModels.BlogViewModels {
+    public partial class BlogContentViewModel {
+
     }
 }
-

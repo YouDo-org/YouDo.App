@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="YouDo.MVVM.View.MainViews.BlogPage"
              xmlns:res="clr-namespace:YouDo.Resources.Localization"
-             xmlns:viewmodel="clr-namespace:YouDo.MVVM.ViewModel.MainViewModels"
+             xmlns:viewmodel="clr-namespace:YouDo.MVVM.ViewModel.MainViewModels.BlogViewModels"
              xmlns:views="clr-namespace:YouDo.MVVM.View.MainViews"
              x:DataType="viewmodel:BlogViewModel"
              Title=""
@@ -14,10 +14,19 @@
 
         <views:TopNavigationBar Grid.Row="0"/>
 
-        <Label Grid.Row="1"
-            Text="Blog"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+
+        <CollectionView ItemsSource="{Binding BlogContents}"
+                        Grid.Row="1">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout HeightRequest="100" Background="Gray">
+                        <HorizontalStackLayout>
+                            <Label Text="{Binding UserName}"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
         <views:BottomNavigationBar Grid.Row="2"/>
 
