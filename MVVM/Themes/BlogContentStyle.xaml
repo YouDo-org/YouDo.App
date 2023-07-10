@@ -3,10 +3,9 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     xmlns:res="clr-namespace:YouDo.Resources.Localization"
-                    xmlns:model="clr-namespace:YouDo.MVVM.Model.MainModels.BlogModels"
-                    x:Class="YouDo.MVVM.Themes.BlogContentStyle">
+                    xmlns:model="clr-namespace:YouDo.MVVM.Model.MainModels.BlogModels">
 
-    <Style TargetType="ImageButton">
+    <Style x:Key="CommandImageButton" TargetType="ImageButton">
         <Setter Property="HeightRequest" Value="20"/>
         <Setter Property="WidthRequest" Value="20"/>
     </Style>
@@ -16,15 +15,10 @@
         <Setter Property="WidthRequest" Value="60"/>
     </Style>
 
-    <Style TargetType="Label">
-        <Setter Property="FontSize" Value="Body"/>
-    </Style>
-
-
     <DataTemplate x:Key="BlogContentView"
                   x:DataType="{x:Type model:BlogContentModel}">
 
-        <VerticalStackLayout Margin="8"
+        <VerticalStackLayout Margin="8, 8, 8, 0"
                              Background="White">
 
             <!--User Information-->
@@ -32,8 +26,8 @@
 
                 <!--User Image-->
                 <Border StrokeShape="RoundRectangle 80,80,80,80"
-                                        StrokeThickness="8"
-                                        Stroke="Black">
+                        StrokeThickness="8"
+                        Stroke="Black">
                     <Image Source="userimage.png" Style="{StaticResource Profile}"/>
                 </Border>
 
@@ -43,48 +37,66 @@
                                            HeightRequest="40"
                                            Margin="0, 3, 0, 0">
                         <Label Text="{Binding UserName}"
+                               TextColor="Black"
                                FontSize="17"
+                               FontFamily="Segoe UI Semibold"
                                HeightRequest="24"
                                VerticalTextAlignment="End"
                                FontAttributes="Bold"/>
 
                         <Button Text="{x:Static res:AppResource.Follow}"
-                                                FontAttributes="Bold"
-                                                FontSize="17"
-                                                HeightRequest="35"
-                                                TextColor="#0a66c2"
-                                                Background="Transparent"
-                                                VerticalOptions="Start"
-                                                Margin="-5, 0, 0, 0"/>
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                HeightRequest="35"
+                                TextColor="#0a66c2"
+                                Background="Transparent"
+                                VerticalOptions="Start"
+                                Margin="-5, 0, 0, 0"/>
                     </HorizontalStackLayout>
 
                     <VerticalStackLayout VerticalOptions="End">
-                        <Label Text="{Binding UserDefenition}"/>
-                        <Label Text="{Binding time}"/>
+                        <Label Text="{Binding UserDefenition}"
+                               FontFamily="Segoe UI"
+                               Margin="5, -8, 0, 0"
+                               TextColor="#8c8c8c"/>
+
+                        <Label Text="{Binding time}"
+                               FontFamily="Segoe UI"
+                               Margin="5, 5, 0, 0"/>
                     </VerticalStackLayout>
                 </Grid>
             </HorizontalStackLayout>
 
-            <Rectangle HeightRequest="2"
-                       HorizontalOptions="FillAndExpand"
-                       Margin="18, 0"
-                       Fill="#868686"/>
-
             <!--Blog Content Preview-->
             <StackLayout Margin="18, 9, 18, 0"
                          Background="White">
-                <Label Text="{Binding BlogContent}"/>
+                <Label Text="{Binding BlogContent}"
+                       FontSize="18"/>
             </StackLayout>
 
+            <Rectangle HeightRequest="2"
+                       HorizontalOptions="FillAndExpand"
+                       Margin="18, 15"
+                       Fill="#868686"/>
+            
             <!--Commands Like, Comment, Repost, Share-->
-            <HorizontalStackLayout Margin="18, 10, 18, 0"
+            <HorizontalStackLayout Margin="18, 4, 18, 0"
                                    Padding="5, 5, 5, 10"
                                    Spacing="20">
-                <ImageButton Source="like.png"/>
-                <ImageButton Source="comment.png"/>
-                <!--<Image Source="repost.png"/>-->
-                <ImageButton Source="share.png"/>
+                <ImageButton Style="{StaticResource CommandImageButton}" Source="like.png" />
+                <ImageButton Style="{StaticResource CommandImageButton}" Source="comment.png"
+                             Command="{Binding ChangeCommentVisibilityCommand}"/>
+                <ImageButton Style="{StaticResource CommandImageButton}" Source="repost.png"/>
+                <ImageButton Style="{StaticResource CommandImageButton}" Source="share.png"/>
             </HorizontalStackLayout>
+
+            <CollectionView ItemsSource="{Binding Comments}"
+                            ItemTemplate="{StaticResource CommentStyle}"
+                            Margin="18, 5"
+                            VerticalScrollBarVisibility="Always"
+                            Background="#fcfcfc"
+                            IsVisible="{Binding CommentVisibility}"/>
+
         </VerticalStackLayout>
 
     </DataTemplate>

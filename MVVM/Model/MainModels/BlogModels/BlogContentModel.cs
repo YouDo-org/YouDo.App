@@ -1,63 +1,40 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YouDo.MVVM.Model.MainModels.BlogModels {
+namespace YouDo.MVVM.Model.MainModels.BlogModels;
 
-    public partial class BlogContentModel : ObservableObject {
+public partial class BlogContentModel : BaseContentModel {
 
-        [ObservableProperty]
-        public string userName = "";
+    [ObservableProperty]
+    string blogContent = "";
 
-        [ObservableProperty]
-        public string userDefenition = "";
+    [ObservableProperty]
+    bool commentVisibility = false;
 
-        [ObservableProperty]
-        public string blogContent = "";
+    [ObservableProperty]
+    public ObservableCollection<CommentModule> comments;
 
-        [ObservableProperty]
-        public Image userIcon;
+    public BlogContentModel(string username, string userdefenition, string blogcontent, DateTime releasedate, string userIconPath) :
+        base(username, userdefenition, releasedate, userIconPath) {
+        
+        blogContent = blogcontent;
 
-        private DateTime releaseDate;
-        public string time {
-            get { return FormatDateTime(); }
-            set { }
-        }
+        comments = new ObservableCollection<CommentModule> {
+            new CommentModule("Alex", "Developer", "Nice Bro !!!", DateTime.Now, "userimage.png"),
+            new CommentModule("Alice", "Writer", "O yeah", new DateTime(2023, 7, 10, 18, 5, 0), "userimage.png"),
+            new CommentModule("Jim", "Editor","Thanks", new DateTime(2023, 7, 10), "userimage.png")
+        };
+    }
 
-
-        // public string time = DateTime.Now - ReleaseDate;
-
-        public BlogContentModel(string username, string userdefenition, string blogcontent, DateTime releasedate, string userIconPath) {
-            UserName = username;
-            UserDefenition = userdefenition;
-            BlogContent = blogcontent;
-            releaseDate = releasedate;
-            userIcon = new Image { Source = userIconPath };
-        }
-
-        public string FormatDateTime() {
-            TimeSpan timeDifference = DateTime.Now - releaseDate;
-
-            if (timeDifference.TotalMinutes < 1) {
-                return "Now";
-            } else if (timeDifference.TotalHours < 1) {
-                return $"{timeDifference.Minutes} min";
-            } else if (timeDifference.TotalDays < 1) {
-                return $"{timeDifference.Hours} hour";
-            } else if (timeDifference.TotalDays < 2) {
-                return "Dün";
-            } else if (timeDifference.TotalDays < 7) {
-                return $"{timeDifference.Days} day";
-            } else if (timeDifference.TotalDays > 365) {
-                return $"{timeDifference.TotalDays/365} year";
-            }
-            return "";
-
-        }
-
+    [RelayCommand]
+    void ChangeCommentVisibility() {
+        CommentVisibility = !CommentVisibility;
     }
 }

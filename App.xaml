@@ -11,6 +11,7 @@
                 <ResourceDictionary Source="MVVM/Themes/EntrancePageStyle.xaml" />
                 <ResourceDictionary Source="MVVM/Themes/MapPageStyle.xaml" />
                 <ResourceDictionary Source="MVVM/Themes/BlogContentStyle.xaml" />
+                <ResourceDictionary Source="MVVM/Themes/CommentStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:res="clr-namespace:YouDo.Resources.Localization"
+                    xmlns:model="clr-namespace:YouDo.MVVM.Model.MainModels.BlogModels">
+
+    <DataTemplate x:Key="CommentStyle"
+                  x:DataType="{x:Type model:CommentModule}">
+
+        <!--Username and Defenition-->
+        <Grid Margin="10, 10, 10, 9"
+              HorizontalOptions="FillAndExpand"
+              ColumnDefinitions="Auto, *">
+
+            <!--User Image-->
+            <Border StrokeShape="RoundRectangle 30,30,30,30"
+                    StrokeThickness="8"
+                    Stroke="Black"
+                    WidthRequest="63"
+                    HeightRequest="63"
+                    VerticalOptions="Start"
+                    Grid.Column="0">
+                <Image Source="userimage.png"
+                           WidthRequest="55"
+                           HeightRequest="55"/>
+            </Border>
+
+            <VerticalStackLayout Padding="5"
+                                 Grid.Column="1"
+                                 BackgroundColor="#f2f2f2"
+                                 HorizontalOptions="FillAndExpand">
+
+                <HorizontalStackLayout VerticalOptions="Start"
+                                       HeightRequest="40"
+                                       Margin="5, 3, 0, 0">
+                    <Label Text="{Binding UserName}"
+                           TextColor="Black"
+                           FontSize="17"
+                           FontFamily="Segoe UI Semibold"
+                           HeightRequest="24"
+                           VerticalTextAlignment="End"
+                           FontAttributes="Bold"/>
+
+                    <Button Text="{x:Static res:AppResource.Follow}"
+                            FontAttributes="Bold"
+                            FontSize="17"
+                            HeightRequest="35"
+                            TextColor="#0a66c2"
+                            Background="Transparent"
+                            VerticalOptions="Start"
+                            Margin="-5, 0, 0, 0"/>
+
+                </HorizontalStackLayout>
+
+                <Label Text="{Binding UserDefenition}"
+                       FontFamily="Segoe UI"
+                       Margin="5, -8, 0, 0"
+                       TextColor="#8c8c8c"/>
+
+                <Label Text="{Binding Comment}"
+                       FontFamily="Segoe UI"
+                       Margin="5, 5, 0, 0"/>
+
+            </VerticalStackLayout>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

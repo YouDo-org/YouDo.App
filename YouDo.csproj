@@ -108,6 +108,9 @@
 	  <MauiXaml Update="MVVM\Themes\BlogContentStyle.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="MVVM\Themes\CommentStyle.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="MVVM\Themes\MapPageStyle.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

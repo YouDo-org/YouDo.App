@@ -6,7 +6,8 @@
     xmlns:local="clr-namespace:YouDo"
     Shell.FlyoutBehavior="Disabled"
     xmlns:entranceview="clr-namespace:YouDo.MVVM.View.EntranceView"
-    xmlns:mainview="clr-namespace:YouDo.MVVM.View.MainViews">
+    xmlns:mainview="clr-namespace:YouDo.MVVM.View.MainViews"
+    xmlns:blogview="clr-namespace:YouDo.MVVM.View.MainViews.BlogViews">
 
 
     <!--#region Entrance View Settings-->
@@ -29,7 +30,7 @@
                   Route="MapPage"/>
 
     <ShellContent Title="BlogPage"
-                  ContentTemplate="{DataTemplate mainview:BlogPage}"
+                  ContentTemplate="{DataTemplate blogview:BlogPage}"
                   Route="BlogPage"/>
 
     <ShellContent Title="CampaignsPage"

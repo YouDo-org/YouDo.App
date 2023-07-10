@@ -9,6 +9,7 @@ using YouDo.MVVM.View.MainViews;
 using YouDo.MVVM.ViewModel.EntranceViewModels;
 using YouDo.MVVM.View.EntranceView;
 using YouDo.MVVM.ViewModel.MainViewModels.BlogViewModels;
+using YouDo.MVVM.View.MainViews.BlogViews;
 
 namespace YouDo;
 
