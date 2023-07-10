@@ -19,6 +19,9 @@ namespace YouDo.MVVM.Model.MainModels.BlogModels {
         [ObservableProperty]
         public string blogContent = "";
 
+        [ObservableProperty]
+        public Image userIcon;
+
         private DateTime releaseDate;
         public string time {
             get { return FormatDateTime(); }
@@ -28,11 +31,12 @@ namespace YouDo.MVVM.Model.MainModels.BlogModels {
 
         // public string time = DateTime.Now - ReleaseDate;
 
-        public BlogContentModel(string username, string userdefenition, string blogcontent, DateTime releasedate) {
+        public BlogContentModel(string username, string userdefenition, string blogcontent, DateTime releasedate, string userIconPath) {
             UserName = username;
             UserDefenition = userdefenition;
             BlogContent = blogcontent;
             releaseDate = releasedate;
+            userIcon = new Image { Source = userIconPath };
         }
 
         public string FormatDateTime() {

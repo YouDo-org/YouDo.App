@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:res="clr-namespace:YouDo.Resources.Localization"
+                    xmlns:model="clr-namespace:YouDo.MVVM.Model.MainModels.BlogModels"
+                    x:Class="YouDo.MVVM.Themes.BlogContentStyle">
+
+    <Style TargetType="ImageButton">
+        <Setter Property="HeightRequest" Value="20"/>
+        <Setter Property="WidthRequest" Value="20"/>
+    </Style>
+
+    <Style x:Key="Profile" TargetType="Image">
+        <Setter Property="HeightRequest" Value="60"/>
+        <Setter Property="WidthRequest" Value="60"/>
+    </Style>
+
+    <Style TargetType="Label">
+        <Setter Property="FontSize" Value="Body"/>
+    </Style>
+
+
+    <DataTemplate x:Key="BlogContentView"
+                  x:DataType="{x:Type model:BlogContentModel}">
+
+        <VerticalStackLayout Margin="8"
+                             Background="White">
+
+            <!--User Information-->
+            <HorizontalStackLayout Margin="10, 10, 10, 9">
+
+                <!--User Image-->
+                <Border StrokeShape="RoundRectangle 80,80,80,80"
+                                        StrokeThickness="8"
+                                        Stroke="Black">
+                    <Image Source="userimage.png" Style="{StaticResource Profile}"/>
+                </Border>
+
+                <!--Username and Defenition-->
+                <Grid Margin="0, 0, 0, 0">
+                    <HorizontalStackLayout VerticalOptions="Start"
+                                           HeightRequest="40"
+                                           Margin="0, 3, 0, 0">
+                        <Label Text="{Binding UserName}"
+                               FontSize="17"
+                               HeightRequest="24"
+                               VerticalTextAlignment="End"
+                               FontAttributes="Bold"/>
+
+                        <Button Text="{x:Static res:AppResource.Follow}"
+                                                FontAttributes="Bold"
+                                                FontSize="17"
+                                                HeightRequest="35"
+                                                TextColor="#0a66c2"
+                                                Background="Transparent"
+                                                VerticalOptions="Start"
+                                                Margin="-5, 0, 0, 0"/>
+                    </HorizontalStackLayout>
+
+                    <VerticalStackLayout VerticalOptions="End">
+                        <Label Text="{Binding UserDefenition}"/>
+                        <Label Text="{Binding time}"/>
+                    </VerticalStackLayout>
+                </Grid>
+            </HorizontalStackLayout>
+
+            <Rectangle HeightRequest="2"
+                       HorizontalOptions="FillAndExpand"
+                       Margin="18, 0"
+                       Fill="#868686"/>
+
+            <!--Blog Content Preview-->
+            <StackLayout Margin="18, 9, 18, 0"
+                         Background="White">
+                <Label Text="{Binding BlogContent}"/>
+            </StackLayout>
+
+            <!--Commands Like, Comment, Repost, Share-->
+            <HorizontalStackLayout Margin="18, 10, 18, 0"
+                                   Padding="5, 5, 5, 10"
+                                   Spacing="20">
+                <ImageButton Source="like.png"/>
+                <ImageButton Source="comment.png"/>
+                <!--<Image Source="repost.png"/>-->
+                <ImageButton Source="share.png"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+    </DataTemplate>
+
+</ResourceDictionary>

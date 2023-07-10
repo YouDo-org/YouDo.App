@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="YouDo.MVVM.View.MainViews.BlogPage"
              xmlns:res="clr-namespace:YouDo.Resources.Localization"
+             xmlns:model="clr-namespace:YouDo.MVVM.Model.MainModels.BlogModels"
              xmlns:viewmodel="clr-namespace:YouDo.MVVM.ViewModel.MainViewModels.BlogViewModels"
              xmlns:views="clr-namespace:YouDo.MVVM.View.MainViews"
              x:DataType="viewmodel:BlogViewModel"
@@ -16,68 +17,9 @@
 
 
         <CollectionView ItemsSource="{Binding BlogContents}"
+                        ItemTemplate="{StaticResource BlogContentView}"
                         Grid.Row="1"
-                        Background="LightGray">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <!--User Information-->
-                    <VerticalStackLayout HeightRequest="100"
-                                         Margin="8"
-                                         Background="White">
-                        <HorizontalStackLayout Margin="10">
-                            
-                            <!--User Image-->
-                            <Border StrokeShape="RoundRectangle 80,80,80,80"
-                                    StrokeThickness="8"
-                                    Stroke="Black">
-                                <Image Source="userimage.png" 
-                                       WidthRequest="60"
-                                       HeightRequest="60"/>
-                            </Border>
-
-                            <!--Username and Defenition-->
-                            <Grid Margin="0, 0, 0, 0">
-                                <HorizontalStackLayout VerticalOptions="Start"
-                                                       HeightRequest="40"
-                                                       Margin="0, 3, 0, 0">
-                                    <Label Text="{Binding UserName}"
-                                           FontSize="17"
-                                           HeightRequest="24"
-                                           VerticalTextAlignment="End"
-                                           FontAttributes="Bold"/>
-
-                                    <Button Text="{x:Static res:AppResource.Follow}"
-                                            FontAttributes="Bold"
-                                            FontSize="17"
-                                            HeightRequest="35"
-                                            TextColor="#0a66c2"
-                                            Background="Transparent"
-                                            VerticalOptions="Start"
-                                            Margin="-5, 0, 0, 0"/>
-                                </HorizontalStackLayout>
-
-                                <VerticalStackLayout VerticalOptions="End">
-                                    <Label Text="{Binding UserDefenition}"
-                                       FontSize="17"
-                                       HeightRequest="20"
-                                       FontAttributes="None"/>
-                                    <Label Text="{Binding time}"
-                                       FontSize="17"
-                                       HeightRequest="20"
-                                       FontAttributes="None"/>
-                                </VerticalStackLayout>
-                            </Grid>
-
-                        </HorizontalStackLayout>
-                    </VerticalStackLayout>
-                    
-                    <!--Blog Content Preview-->
-                    
-                    <!--Commands Share, Comment, Like and more-->
-                    
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+                        Background="LightGray"/>
 
         <views:BottomNavigationBar Grid.Row="2"/>
 

@@ -60,10 +60,14 @@
 	  <None Remove="Resources\Fonts\Pacifico-Regular.ttf" />
 	  <None Remove="Resources\Images\blog.png" />
 	  <None Remove="Resources\Images\campaigns.png" />
+	  <None Remove="Resources\Images\comment.png" />
 	  <None Remove="Resources\Images\create.png" />
 	  <None Remove="Resources\Images\events.png" />
+	  <None Remove="Resources\Images\like.png" />
 	  <None Remove="Resources\Images\logo.png" />
 	  <None Remove="Resources\Images\map.png" />
+	  <None Remove="Resources\Images\repost.png" />
+	  <None Remove="Resources\Images\share.png" />
 	  <None Remove="Resources\Images\userimage.png" />
 	</ItemGroup>
 
@@ -101,6 +105,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="MVVM\Themes\BlogContentStyle.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="MVVM\Themes\MapPageStyle.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

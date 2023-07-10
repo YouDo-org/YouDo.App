@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="MVVM/Themes/ThemeColors.xaml" />
                 <ResourceDictionary Source="MVVM/Themes/EntrancePageStyle.xaml" />
                 <ResourceDictionary Source="MVVM/Themes/MapPageStyle.xaml" />
+                <ResourceDictionary Source="MVVM/Themes/BlogContentStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
