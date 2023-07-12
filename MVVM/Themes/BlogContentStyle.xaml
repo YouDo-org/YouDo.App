@@ -71,7 +71,16 @@
             <StackLayout Margin="18, 9, 18, 0"
                          Background="White">
                 <Label Text="{Binding BlogContent}"
-                       FontSize="18"/>
+                       FontSize="18"
+                       MaxLines="{Binding MaxLines}"
+                       LineBreakMode="WordWrap">
+                    <Label.GestureRecognizers>
+                        <!--{Binding Source={RelativeSource AncestorType={x:Type local:PeopleViewModel}}, Path=DeleteEmployeeCommand}-->
+                        <TapGestureRecognizer Command="{Binding LabelTappedCommand}"                                              
+                              CommandParameter="{Binding Source={RelativeSource AncestorType={x:Type Label}}}" />
+                    </Label.GestureRecognizers>
+
+                </Label>
             </StackLayout>
 
             <Rectangle HeightRequest="2"
