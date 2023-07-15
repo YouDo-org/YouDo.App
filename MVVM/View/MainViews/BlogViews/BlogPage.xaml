@@ -42,9 +42,10 @@
             </Border>
 
             <ImageButton Source="writeblog.png"
-                            WidthRequest="30"
-                            HeightRequest="30"
-                            HorizontalOptions="End"/>
+                         WidthRequest="30"
+                         HeightRequest="30"
+                         HorizontalOptions="End"
+                         Command="{Binding GoToWriteBlogPageAsyncCommand}"/>
 
         </HorizontalStackLayout>
 

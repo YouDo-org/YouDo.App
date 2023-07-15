@@ -7,6 +7,10 @@ using YouDo.MVVM.ViewModel;
 namespace YouDo.MVVM.Model.MainModels.BlogModels;
 
 public partial class BlogContentModel : BaseContentModel{
+    /// <summary>
+    /// Sub class of BaseContentModel
+    /// Blog content includes other related informations like blog content text, visibility of comments, comments (another data type).
+    /// </summary>
 
     [ObservableProperty]
     string blogContent = "";
@@ -36,6 +40,7 @@ public partial class BlogContentModel : BaseContentModel{
         blogContent = temp_BlogContent;
         ExpandedContent();
 
+        // Adding new comments for testing
         comments = new ObservableCollection<CommentModule> {
             new CommentModule("Alex", "Developer", "Nice Bro !!!", DateTime.Now, "userimage.png"),
             new CommentModule("Alice", "Writer", "O yeah", new DateTime(2023, 7, 10, 18, 5, 0), "userimage.png"),
@@ -43,6 +48,12 @@ public partial class BlogContentModel : BaseContentModel{
         };
     }
     
+    /// <summary>
+    /// Normally a content has 3 lines.
+    /// Expand the content to see all lines and words.
+    /// This method removes See more (...) part too.
+    /// This works reverse too.
+    /// </summary>
     private void ExpandedContent() {
         if (isExpanded) {
             MaxLines = temp_maxLines;
@@ -64,6 +75,11 @@ public partial class BlogContentModel : BaseContentModel{
     }
 
 
+    /// <summary>
+    /// If user tab to content label (which include the source text)
+    /// The content is expanded or collapsed
+    /// </summary>
+    /// <param name="contentLabel">Self label</param>
     [RelayCommand]
     private void LabelTapped(Label contentLabel) {
         ExpandedContent();

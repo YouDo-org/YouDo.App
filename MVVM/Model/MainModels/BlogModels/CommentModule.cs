@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace YouDo.MVVM.Model.MainModels.BlogModels;
 
+/// <summary>
+/// CommentModule sub class of BaseContentModel because comments are a type of content which includes additional comment text.
+/// </summary>
 public partial class CommentModule : BaseContentModel{
 
     [ObservableProperty]

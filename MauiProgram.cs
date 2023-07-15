@@ -38,6 +38,7 @@ public static class MauiProgram {
         
         builder.Services.AddTransient<MapPage>();
         builder.Services.AddTransient<BlogPage>();
+        builder.Services.AddTransient<BlogWritePage>();
         builder.Services.AddTransient<CampaignsPage>();
         builder.Services.AddTransient<CreatePage>();
         builder.Services.AddTransient<EventsPage>();

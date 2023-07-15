@@ -8,6 +8,11 @@ public partial class BottomNavigationBar : ContentView {
 		InitializeComponent();
 	}
 
+    /// <summary>
+    /// Navigate to given page.
+    /// Unless the page is the same as the current page
+    /// </summary>
+    /// <param name="page_name">Name of the page that we want to navigate</param>
     private void Navigate(string page_name) {
         // Shell.Current.CurrentState.ToString()
         string[] path = Shell.Current.CurrentPage.ToString().Split(".");

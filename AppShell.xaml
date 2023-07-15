@@ -33,6 +33,10 @@
                   ContentTemplate="{DataTemplate blogview:BlogPage}"
                   Route="BlogPage"/>
 
+    <ShellContent Title="BlogWritePage"
+                  ContentTemplate="{DataTemplate blogview:BlogWritePage}"
+                  Route="BlogWritePage"/>
+
     <ShellContent Title="CampaignsPage"
                   ContentTemplate="{DataTemplate mainview:CampaignsPage}"
                   Route="CampaignsPage"/>

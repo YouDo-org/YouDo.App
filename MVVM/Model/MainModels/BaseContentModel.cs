@@ -31,7 +31,11 @@ public partial class BaseContentModel : ObservableObject {
         userIcon = new Image { Source = userIconPath };
     }
 
-    public string FormatDateTime() {
+    /// <summary>
+    /// Converts releaseDate to a readable string to see how many days, hours, minutes ago the content was published
+    /// </summary>
+    /// <returns>Readable string</returns>
+    private string FormatDateTime() {
         TimeSpan timeDifference = DateTime.Now - releaseDate;
 
         if (timeDifference.TotalMinutes < 1) {

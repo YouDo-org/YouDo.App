@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace YouDo.MVVM.Model.EntranceModels;
 public partial class UserInfoModel : ObservableObject {
+    /// <summary>
+    /// Necassary informations for user profile
+    /// </summary>
 
     [ObservableProperty]
     private string username = "";

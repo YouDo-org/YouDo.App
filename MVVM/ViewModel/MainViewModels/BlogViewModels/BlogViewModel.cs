@@ -1,14 +1,16 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using YouDo.MVVM.Model.MainModels.BlogModels;
+using YouDo.MVVM.View.MainViews.BlogViews;
 
 namespace YouDo.MVVM.ViewModel.MainViewModels.BlogViewModels;
 public partial class BlogViewModel : BaseViewModel {
 
     [ObservableProperty]
-    public ObservableCollection<BlogContentModel> blogContents;
+    ObservableCollection<BlogContentModel> blogContents;
 
     public BlogViewModel() {
         // YouDo.MVVM.ViewModel.MainViewModels.BlogViewModels.BlogViewModel
@@ -17,6 +19,11 @@ public partial class BlogViewModel : BaseViewModel {
             new BlogContentModel("Alice", "Software Engineer", "Aliquam faucibus nec metus rhoncus bibendum. Fusce vulputate, tortor nec lobortis maximus, dolor lectus porta odio, nec tempus ligula nisl et eros. Nullam mattis at metus a lobortis. Sed a convallis diam. Curabitur quam sapien, cursus eu mauris vitae, sagittis porttitor libero. Fusce sed lacus sit amet massa pharetra porttitor et non arcu. Curabitur vel mattis dui, quis molestie justo. ", new DateTime(2023, 7, 10, 18, 5, 0), "userimage.png"),
             new BlogContentModel("Jack", "UI/UX Designer", "Praesent luctus odio eu tempor aliquam. Integer ut ex tristique, pulvinar sapien vitae, rutrum tortor. Aenean nisl arcu, tempor ac magna in, auctor pellentesque orci. Sed lacus enim, pretium lobortis nunc et, elementum lacinia mi. Sed rutrum, sem ut ullamcorper commodo, libero orci pretium nulla, eu volutpat nulla lectus in elit. ", new DateTime(2023, 7, 10), "userimage.png")
         };
+    }
+
+    [RelayCommand]
+    async void GoToWriteBlogPageAsync() {
+        await Shell.Current.GoToAsync($"../{nameof(BlogWritePage)}", true);
     }
 }
 
