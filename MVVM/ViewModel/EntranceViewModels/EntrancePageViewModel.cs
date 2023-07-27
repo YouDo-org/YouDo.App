@@ -16,7 +16,7 @@ public partial class EntrancePageViewModel : BaseViewModel {
     async Task MoveToForgotPasswordAsync() {
         await Shell.Current.GoToAsync(nameof(ForgotPasswordPage), true,
             new Dictionary<string, object> {
-                {"UserInfoModel", this.UserInfoModel}
+                {"UserInfoModel", UserInfoModel}
             });
     }
 
@@ -24,7 +24,7 @@ public partial class EntrancePageViewModel : BaseViewModel {
     async Task MoveToCreateNewAccount() {
         await Shell.Current.GoToAsync(nameof(CreateNewAccountPage), true,
             new Dictionary<string, object> {
-                {"UserInfoModel", this.UserInfoModel}
+                {"UserInfoModel", UserInfoModel}
             });
     }
 

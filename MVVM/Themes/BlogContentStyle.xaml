@@ -3,7 +3,7 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     xmlns:res="clr-namespace:YouDo.Resources.Localization"
-                    xmlns:model="clr-namespace:YouDo.MVVM.Model.MainModels.BlogModels">
+                    xmlns:model="clr-namespace:YouDo.MVVM.Model.MainModels">
 
     <Style x:Key="CommandImageButton" TargetType="ImageButton">
         <Setter Property="HeightRequest" Value="20"/>
@@ -26,13 +26,16 @@
 
                 <!--User Image-->
                 <Border StrokeShape="RoundRectangle 80,80,80,80"
+                        WidthRequest="80"
+                        HeightRequest="80"
                         StrokeThickness="8"
                         Stroke="Black">
                     <Image Source="userimage.png" Style="{StaticResource Profile}"/>
                 </Border>
 
                 <!--Username and Defenition-->
-                <Grid Margin="0, 0, 0, 0">
+                <VerticalStackLayout HeightRequest="50"
+                                     VerticalOptions="Start">
                     <HorizontalStackLayout VerticalOptions="Start"
                                            HeightRequest="40"
                                            Margin="0, 3, 0, 0">
@@ -54,23 +57,22 @@
                                 Margin="-5, 0, 0, 0"/>
                     </HorizontalStackLayout>
 
-                    <VerticalStackLayout VerticalOptions="End">
+                    <VerticalStackLayout Spacing="-4"
+                                         Margin="-10, 0, 0, 0">
                         <Label Text="{Binding UserDefenition}"
                                FontFamily="Segoe UI"
-                               Margin="5, -8, 0, 0"
                                TextColor="#8c8c8c"/>
 
                         <Label Text="{Binding time}"
-                               FontFamily="Segoe UI"
-                               Margin="5, 5, 0, 0"/>
+                               FontFamily="Segoe UI"/>
                     </VerticalStackLayout>
-                </Grid>
+                </VerticalStackLayout>
             </HorizontalStackLayout>
 
             <!--Blog Content Preview-->
-            <StackLayout Margin="18, 9, 18, 0"
+            <StackLayout Margin="18, 0, 18, 0"
                          Background="White">
-                <Label Text="{Binding BlogContent}"
+                <Label Text="{Binding Content}"
                        FontSize="18"
                        MaxLines="{Binding MaxLines}"
                        LineBreakMode="WordWrap">
@@ -109,5 +111,113 @@
         </VerticalStackLayout>
 
     </DataTemplate>
+
+    <DataTemplate x:Key="EventContentView"
+                  x:DataType="{x:Type model:EventContentModule}">
+
+        <VerticalStackLayout Margin="8, 8, 8, 0"
+                             Background="White">
+
+            <!--User Information-->
+            <HorizontalStackLayout Margin="10, 10, 10, 9">
+
+                <!--User Image-->
+                <Border StrokeShape="RoundRectangle 80,80,80,80"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        StrokeThickness="8"
+                        Stroke="Black">
+                    <Image Source="userimage.png" Style="{StaticResource Profile}"/>
+                </Border>
+
+                <!--Username and Defenition-->
+                <Grid Margin="0, 0, 0, 0">
+                    <HorizontalStackLayout VerticalOptions="Start"
+                                           HeightRequest="40"
+                                           Margin="0, 3, 0, 0">
+                        <Label Text="{Binding UserName}"
+                               TextColor="Black"
+                               FontSize="17"
+                               FontFamily="Segoe UI Semibold"
+                               HeightRequest="24"
+                               VerticalTextAlignment="End"
+                               FontAttributes="Bold"/>
+
+                        <Button Text="{x:Static res:AppResource.Follow}"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                TextColor="#0a66c2"
+                                Background="Transparent"
+                                Padding="0"
+                                VerticalOptions="Start"
+                                Margin="5, 7, 0, 0"/>
+                    </HorizontalStackLayout>
+
+                    <VerticalStackLayout VerticalOptions="End"
+                                         Spacing="-4">
+                        <Label Text="{Binding UserDefenition}"
+                               FontFamily="Segoe UI"
+                               TextColor="#8c8c8c"/>
+
+                        <Label Text="{Binding time}"
+                               FontFamily="Segoe UI"/>
+
+                    </VerticalStackLayout>
+                </Grid>
+            </HorizontalStackLayout>
+
+            <!--Blog Content Preview-->
+            <StackLayout Margin="18, 0, 18, 0"
+                         Background="White">
+                
+                <Button Text="Position"
+                        FontAttributes="Bold"
+                        BorderWidth="0"
+                        HorizontalOptions="Start"
+                        FontSize="17"
+                        TextColor="#0a66c2"
+                        Background="Transparent"
+                        Padding="0"/>
+                
+                <Label Text="{Binding Content}"
+                       FontSize="18"
+                       MaxLines="{Binding MaxLines}"
+                       LineBreakMode="WordWrap">
+                    <Label.GestureRecognizers>
+                        <!--{Binding Source={RelativeSource AncestorType={x:Type local:PeopleViewModel}}, Path=DeleteEmployeeCommand}-->
+                        <TapGestureRecognizer Command="{Binding LabelTappedCommand}"                                              
+                              CommandParameter="{Binding Source={RelativeSource AncestorType={x:Type Label}}}" />
+                    </Label.GestureRecognizers>
+
+                </Label>
+            </StackLayout>
+
+            <Rectangle HeightRequest="2"
+                       HorizontalOptions="FillAndExpand"
+                       Margin="18, 15"
+                       Fill="#868686"/>
+
+            <!--Commands Like, Comment, Repost, Share-->
+            <HorizontalStackLayout Margin="18, 4, 18, 0"
+                                   Padding="5, 5, 5, 10"
+                                   Spacing="20">
+                <ImageButton Style="{StaticResource CommandImageButton}" Source="like.png" />
+                <ImageButton Style="{StaticResource CommandImageButton}" Source="comment.png"
+                             Command="{Binding ChangeCommentVisibilityCommand}"/>
+                <ImageButton Style="{StaticResource CommandImageButton}" Source="repost.png"/>
+                <ImageButton Style="{StaticResource CommandImageButton}" Source="share.png"/>
+            </HorizontalStackLayout>
+
+            <CollectionView ItemsSource="{Binding Comments}"
+                            ItemTemplate="{StaticResource CommentStyle}"
+                            Margin="18, 5"
+                            VerticalScrollBarVisibility="Always"
+                            Background="#fcfcfc"
+                            IsVisible="{Binding CommentVisibility}"/>
+
+        </VerticalStackLayout>
+
+    </DataTemplate>
+
 
 </ResourceDictionary>

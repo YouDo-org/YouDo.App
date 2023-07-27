@@ -3,7 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using YouDo.MVVM.Model.MainModels.BlogModels;
+using YouDo.MVVM.Model.MainModels;
 using YouDo.MVVM.View.MainViews.BlogViews;
 
 namespace YouDo.MVVM.ViewModel.MainViewModels.BlogViewModels;

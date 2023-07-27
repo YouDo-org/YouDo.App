@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YouDo.MVVM.Model.MainModels.BlogModels;
+namespace YouDo.MVVM.Model.MainModels;
 
 /// <summary>
 /// CommentModule sub class of BaseContentModel because comments are a type of content which includes additional comment text.

@@ -9,16 +9,19 @@
              Title=""
              Shell.NavBarIsVisible="False"
              Background="{StaticResource BackgroundLight}">
-    <Grid RowDefinitions="50, *, 50">
+
+    <Grid RowDefinitions="50, Auto, *, 50">
 
         <views:TopNavigationBar Grid.Row="0"/>
 
-        <Label Grid.Row="1"
-            Text="Events"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <CollectionView ItemsSource="{Binding EventContents}"
+                        ItemTemplate="{StaticResource EventContentView}"
+                        Grid.Row="2"
+                        Background="LightGray"
+                        VerticalOptions="End"
+                        VerticalScrollBarVisibility="Always"/>
 
-        <views:BottomNavigationBar Grid.Row="2"/>
+        <views:BottomNavigationBar Grid.Row="3"/>
 
     </Grid>
 

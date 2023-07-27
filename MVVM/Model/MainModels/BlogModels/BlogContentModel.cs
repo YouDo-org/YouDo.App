@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using YouDo.MVVM.ViewModel;
 
-namespace YouDo.MVVM.Model.MainModels.BlogModels;
+namespace YouDo.MVVM.Model.MainModels;
 
 public partial class BlogContentModel : BaseContentModel{
     /// <summary>
@@ -13,7 +13,7 @@ public partial class BlogContentModel : BaseContentModel{
     /// </summary>
 
     [ObservableProperty]
-    string blogContent = "";
+    string content = "";
 
     string temp_BlogContent;
 
@@ -37,7 +37,7 @@ public partial class BlogContentModel : BaseContentModel{
         {
         
         temp_BlogContent = blogcontent;
-        blogContent = temp_BlogContent;
+        content = temp_BlogContent;
         ExpandedContent();
 
         // Adding new comments for testing
@@ -58,11 +58,11 @@ public partial class BlogContentModel : BaseContentModel{
         if (isExpanded) {
             MaxLines = temp_maxLines;
             if (temp_BlogContent.Length >= maxCharacters) {
-                BlogContent = temp_BlogContent.Substring(0, maxCharacters) + "...";
+                Content = temp_BlogContent.Substring(0, maxCharacters) + "...";
             }
         } else {
             MaxLines = int.MaxValue;
-            BlogContent = temp_BlogContent;
+            Content = temp_BlogContent;
         }
 
         isExpanded = !isExpanded;
@@ -84,7 +84,7 @@ public partial class BlogContentModel : BaseContentModel{
     private void LabelTapped(Label contentLabel) {
         ExpandedContent();
         contentLabel.MaxLines = MaxLines;
-        contentLabel.Text = BlogContent;
+        contentLabel.Text = Content;
     }
 
 
