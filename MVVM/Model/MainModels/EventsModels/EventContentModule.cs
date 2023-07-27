@@ -11,25 +11,22 @@ namespace YouDo.MVVM.Model.MainModels;
 
 public partial class EventContentModule : BlogContentModel {
 
-    [ObservableProperty]
-    string position;
-
-    [ObservableProperty]
     Location location;
 
     [ObservableProperty]
-    string previewImage;
+    string positionString;
 
-    public EventContentModule(string username, string userdefenition, string blogcontent, DateTime releasedate, string userIconPath, string position) :
+    public EventContentModule(string username, string userdefenition, string blogcontent, DateTime releasedate, string userIconPath, string positionText, Location location) :
     base(username, userdefenition, blogcontent, releasedate, userIconPath) {
-        this.position = position;
+        PositionString = positionText;
+        this.location = location;
+
     }
 
 
     [RelayCommand]
     private async Task NavigateToMap() {
-        var location = new Location(47.645160, -122.1306032);
-        var options = new MapLaunchOptions { Name = "Microsoft Building 25" };
+        var options = new MapLaunchOptions { Name = PositionString };
 
         try {
             await Map.Default.OpenAsync(location, options);
