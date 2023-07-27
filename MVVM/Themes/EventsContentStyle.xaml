@@ -4,9 +4,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     xmlns:res="clr-namespace:YouDo.Resources.Localization"
                     xmlns:model="clr-namespace:YouDo.MVVM.Model.MainModels">
-
-    <DataTemplate x:Key="BlogContentView"
-                  x:DataType="{x:Type model:BlogContentModel}">
+    
+    <DataTemplate x:Key="EventContentView"
+                  x:DataType="{x:Type model:EventContentModule}">
 
         <VerticalStackLayout Style="{StaticResource Base_VS}">
 
@@ -41,6 +41,11 @@
 
             <!--Content Preview-->
             <StackLayout Style="{StaticResource Content_SL}">
+
+                <Button Text="{Binding PositionString}"
+                        Command="{Binding NavigateToMapCommand}"
+                        Style="{StaticResource Position}"/>
+                
                 <Label Text="{Binding Content}"
                        MaxLines="{Binding MaxLines}"
                        Style="{StaticResource ContentLabel}">
@@ -55,7 +60,7 @@
 
             <Rectangle Style="{StaticResource Separator}"/>
 
-            
+
             <!--Commands Like, Comment, Repost, Share-->
             <HorizontalStackLayout Style="{StaticResource Comments_HS}">
                 <ImageButton Style="{StaticResource CommandImageButton}" Source="like.png" />
