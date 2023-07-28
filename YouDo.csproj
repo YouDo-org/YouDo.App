@@ -84,7 +84,7 @@
 	  <Compile Update="MVVM\View\EntranceViews\CreateNewAccountPage.xaml.cs">
 	    <DependentUpon>CreateNewAccountPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="MVVM\View\MainViews\MapPage.xaml.cs">
+	  <Compile Update="MVVM\View\MainViews\MapViews\MapPage.xaml.cs">
 	    <DependentUpon>MapPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="MVVM\View\MainViews\BottomNavigationBar.xaml.cs">
@@ -141,22 +141,22 @@
 	  <MauiXaml Update="MVVM\View\MainViews\BlogViews\BlogWritePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MVVM\View\MainViews\CampaignsPage.xaml">
+	  <MauiXaml Update="MVVM\View\MainViews\CampaignsViews\CampaignsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MVVM\View\MainViews\CreatePage.xaml">
+	  <MauiXaml Update="MVVM\View\MainViews\CreateViews\CreatePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MVVM\View\MainViews\EventsPage.xaml">
+	  <MauiXaml Update="MVVM\View\MainViews\EventsViews\EventsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MVVM\View\MainViews\MapPage.xaml">
+	  <MauiXaml Update="MVVM\View\MainViews\MapViews\MapPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="MVVM\View\MainViews\BottomNavigationBar.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MVVM\View\MainViews\ProfilePage.xaml">
+	  <MauiXaml Update="MVVM\View\MainViews\ProfileViews\ProfilePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="MVVM\View\MainViews\TopNavigationBar.xaml">
