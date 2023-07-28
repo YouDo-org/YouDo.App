@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:res="clr-namespace:YouDo.Resources.Localization"
+                    xmlns:model="clr-namespace:YouDo.MVVM.Model.MainModels">
+
+    <DataTemplate x:Key="BlogContentView"
+                  x:DataType="{x:Type model:BlogContentModel}">
+
+        <VerticalStackLayout Style="{StaticResource Base_VS}">
+
+            <!--User Information-->
+            <HorizontalStackLayout Style="{x:StaticResource UserInfo_HS}">
+
+                <!--User Image-->
+                <Border Style="{StaticResource UserImageBorder}">
+                    <Image Source="userimage.png" 
+                           Style="{StaticResource Profile}"/>
+                </Border>
+
+                <!--Username and Defenition-->
+                <VerticalStackLayout Style="{StaticResource UsernameDefentionVS}">
+                    <HorizontalStackLayout Style="{StaticResource UsernameDefentionVS_HS}">
+                        <Label Text="{Binding UserName}"
+                               Style="{StaticResource UsernameLabel}"/>
+
+                        <Button Text="{x:Static res:AppResource.Follow}"
+                                Style="{StaticResource UserDefenitionFollowButton}"/>
+                    </HorizontalStackLayout>
+
+                    <VerticalStackLayout Style="{StaticResource UserDefentionTime_VS}">
+                        <Label Text="{Binding UserDefenition}"
+                               Style="{StaticResource UserDefenitionLabel}"/>
+
+                        <Label Text="{Binding time}"
+                               Style="{StaticResource RegularLabel}"/>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+            <!--Content Preview-->
+            <StackLayout Style="{StaticResource Content_SL}">
+                <Label Text="{Binding Content}"
+                       MaxLines="{Binding MaxLines}"
+                       Style="{StaticResource ContentLabel}">
+                    <Label.GestureRecognizers>
+                        <!--{Binding Source={RelativeSource AncestorType={x:Type local:PeopleViewModel}}, Path=DeleteEmployeeCommand}-->
+                        <TapGestureRecognizer Command="{Binding LabelTappedCommand}"                                              
+                              CommandParameter="{Binding Source={RelativeSource AncestorType={x:Type Label}}}" />
+                    </Label.GestureRecognizers>
+
+                </Label>
+            </StackLayout>
+
+            <Rectangle Style="{StaticResource Separator}"/>
+
+            
+            <!--Commands Like, Comment, Repost, Share-->
+            <HorizontalStackLayout Style="{StaticResource Comments_HS}">
+                <ImageButton Style="{StaticResource CommandImageButton}" Source="like.png" />
+                <ImageButton Style="{StaticResource CommandImageButton}" Source="comment.png"
+                             Command="{Binding ChangeCommentVisibilityCommand}"/>
+                <ImageButton Style="{StaticResource CommandImageButton}" Source="repost.png"/>
+                <ImageButton Style="{StaticResource CommandImageButton}" Source="share.png"/>
+            </HorizontalStackLayout>
+
+            <CollectionView ItemsSource="{Binding Comments}"
+                            ItemTemplate="{StaticResource CommentStyle}"
+                            Style="{StaticResource CommentsCollection}"
+                            IsVisible="{Binding CommentVisibility}"/>
+
+        </VerticalStackLayout>
+
+    </DataTemplate>
+
+</ResourceDictionary>

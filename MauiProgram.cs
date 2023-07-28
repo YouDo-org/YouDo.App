@@ -8,26 +8,25 @@ using YouDo.MVVM.View.MainViews;
 
 using YouDo.MVVM.ViewModel.EntranceViewModels;
 using YouDo.MVVM.View.EntranceView;
+using YouDo.MVVM.ViewModel.MainViewModels.BlogViewModels;
+using YouDo.MVVM.View.MainViews.BlogViews;
 
 namespace YouDo;
 
-public static class MauiProgram
-{
-	public static MauiApp CreateMauiApp()
-	{
+public static class MauiProgram {
+	public static MauiApp CreateMauiApp() {
 		
             var builder = MauiApp.CreateBuilder();
-		builder
-			.UseMauiApp<App>()
-			.ConfigureFonts(fonts =>
-			{
-				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-				fonts.AddFont("Roboto-Regular.tff", "RobotoRegular");
+        builder
+            .UseMauiApp<App>()
+            .ConfigureFonts(fonts => {
+                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                fonts.AddFont("Roboto-Regular.tff", "RobotoRegular");
                 fonts.AddFont("Pacifico-Regular.tff", "PacificoRegular");
-				fonts.AddFont("Lobster-Regular.ttf", "LobsterRegular");
+                fonts.AddFont("Lobster-Regular.ttf", "LobsterRegular");
             })
-            .UseMauiMaps(); ;
+            .UseMauiMaps();
 
 #if DEBUG
 		builder.Logging.AddDebug();
@@ -39,6 +38,7 @@ public static class MauiProgram
         
         builder.Services.AddTransient<MapPage>();
         builder.Services.AddTransient<BlogPage>();
+        builder.Services.AddTransient<BlogWritePage>();
         builder.Services.AddTransient<CampaignsPage>();
         builder.Services.AddTransient<CreatePage>();
         builder.Services.AddTransient<EventsPage>();

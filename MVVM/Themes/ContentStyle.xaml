@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Style x:Key="Base_VS" TargetType="{x:Type VerticalStackLayout}">
+        <Setter Property="Margin" Value="8, 8, 8, 0"/>
+        <Setter Property="Background" Value="White"/>
+    </Style>
+
+    <Style x:Key="UserInfo_HS" TargetType="{x:Type HorizontalStackLayout}">
+        <Setter Property="Margin" Value="10, 10, 10, 0"/>
+    </Style>
+
+    <Style x:Key="CommandImageButton" TargetType="{x:Type ImageButton}">
+        <Setter Property="HeightRequest" Value="20"/>
+        <Setter Property="WidthRequest" Value="20"/>
+    </Style>
+
+    <Style x:Key="Profile" TargetType="{x:Type Image}">
+        <Setter Property="HeightRequest" Value="80"/>
+        <Setter Property="WidthRequest" Value="80"/>
+    </Style>
+
+    <Style x:Key="UserImageBorder" TargetType="{x:Type Border}">
+        <Setter Property="StrokeShape" Value="RoundRectangle 80, 80, 80, 80"/>
+        <Setter Property="StrokeThickness" Value="6"/>
+        <Setter Property="WidthRequest" Value="80"/>
+        <Setter Property="HeightRequest" Value="80"/>
+        <Setter Property="Stroke" Value="Black"/>
+    </Style>
+
+    <Style x:Key="UsernameDefentionVS" TargetType="{x:Type VerticalStackLayout}">
+        <Setter Property="HeightRequest" Value="50"/>
+        <Setter Property="VerticalOptions" Value="Start"/>
+    </Style>
+
+    <Style x:Key="UsernameLabel" TargetType="{x:Type Label}">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="FontFamily" Value="Segoe UI Semibold"/>
+        <Setter Property="HeightRequest" Value="24"/>
+        <Setter Property="VerticalTextAlignment" Value="End"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="UsernameDefentionVS_HS" TargetType="{x:Type HorizontalStackLayout}">
+        <Setter Property="HeightRequest" Value="40"/>
+        <Setter Property="Margin" Value="0, 3, 0, 0"/>
+        <Setter Property="VerticalOptions" Value="Start"/>
+    </Style>
+
+    <Style x:Key="UserDefenitionFollowButton" TargetType="{x:Type Button}">
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="HeightRequest" Value="35"/>
+        <Setter Property="TextColor" Value="#0a66c2"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="VerticalOptions" Value="Start"/>
+        <Setter Property="Margin" Value="-5, 0, 0, 0"/>
+    </Style>
+
+    <Style x:Key="UserDefentionTime_VS" TargetType="{x:Type VerticalStackLayout}">
+        <Setter Property="Spacing" Value="-4"/>
+        <Setter Property="Margin" Value="0, -6, 0, 0"/>
+    </Style>
+
+    <Style x:Key="RegularLabel" TargetType="{x:Type Label}">
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+    </Style>
+
+    <Style x:Key="UserDefenitionLabel"
+           TargetType="{x:Type Label}"
+           BasedOn="{x:StaticResource RegularLabel}">
+        <Setter Property="TextColor" Value="#8c8c8c"/>
+    </Style>
+
+    <Style x:Key="Content_SL" TargetType="{x:Type StackLayout}">
+        <Setter Property="Margin" Value="18, 0, 18, 0"/>
+        <Setter Property="Background" Value="White"/>
+    </Style>
+
+    <Style x:Key="ContentLabel"
+           TargetType="{x:Type Label}"
+           BasedOn="{x:StaticResource RegularLabel}">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="LineBreakMode" Value="WordWrap"/>
+    </Style>
+
+    <Style x:Key="Interaction_HS" TargetType="{x:Type HorizontalStackLayout}">
+        <Setter Property="Margin" Value="18, 4, 18, 0"/>
+        <Setter Property="Padding" Value="5, 5, 5, 10"/>
+        <Setter Property="Spacing" Value="20"/>
+    </Style>
+
+    <Style x:Key="Separator" TargetType="{x:Type Rectangle}">
+        <Setter Property="HeightRequest" Value="2"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="Margin" Value="18, 15"/>
+        <Setter Property="Fill" Value="#868686"/>
+    </Style>
+
+    <Style x:Key="Comments_HS" TargetType="{x:Type HorizontalStackLayout}">
+        <Setter Property="Margin" Value="18, 4, 18, 0"/>
+        <Setter Property="Padding" Value="5, 5, 5, 5"/>
+        <Setter Property="Spacing" Value="20"/>
+    </Style>
+    
+    <Style x:Key="CommentsCollection" TargetType="{x:Type CollectionView}">
+        <Setter Property="Margin" Value="18, 5"/>
+        <Setter Property="VerticalScrollBarVisibility" Value="Always"/>
+        <Setter Property="Background" Value="#fcfcfc"/>
+    </Style>
+
+    <Style x:Key="Position" TargetType="{x:Type Button}">
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="BorderWidth" Value="0"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="TextColor" Value="#0a66c2"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+</ResourceDictionary>
