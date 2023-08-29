@@ -9,7 +9,7 @@
              Shell.NavBarIsVisible="False"
              Background="{StaticResource BackgroundLight}">
 
-    <Grid RowDefinitions="50, 2*, 1.25*, 50">
+    <Grid RowDefinitions="50, *, 50">
 
         <views:TopNavigationBar Grid.Row="0"/>
 
@@ -17,83 +17,6 @@
         <CollectionView Grid.Row="1"
                         ItemsSource="{Binding MapEventModels}"
                         ItemTemplate="{StaticResource MapEventItemStyle}"/>
-
-        <Border Grid.Row="2"
-                Margin="-3"
-                Background="White"
-                StrokeThickness="0"
-                StrokeShape="RoundRectangle 15, 15, 0, 0">
-
-            <Border.Shadow>
-                <Shadow Brush="Black"
-                        Radius="40"
-                        Opacity="0.8"/>
-            </Border.Shadow>
-
-            <VerticalStackLayout Spacing="2">
-                <Label Text="Event Name"
-                       FontSize="25"
-                       Margin="10, 10, 0, 0"/>
-
-                <!--Rating Starts Here-->
-
-                <Label Text="Type"
-                       FontSize="15"
-                       TextColor="Gray"
-                       Margin="10, 0, 0, 0"/>
-
-                <HorizontalStackLayout>
-                    <Label Text="Open"
-                       FontSize="15"
-                       TextColor="#00f200"
-                       Margin="10, 0, 0, 0"/>
-
-                    <Label Text="Closing Time: 00:00"
-                       FontSize="15"
-                       Margin="10, 0, 0, 0"/>
-                </HorizontalStackLayout>
-
-                <HorizontalStackLayout>
-
-                    <Border StrokeShape="RoundRectangle 20, 20, 20, 20"
-                            Margin="5, 5, 0, 0"
-                            StrokeThickness="4"
-                            Stroke="Transparent">
-                        <Button Text="Open In Maps"
-                                Background="#1d64cd"
-                                FontAttributes="Bold"
-                                FontSize="15"/>
-                    </Border>
-
-                    <Border StrokeShape="RoundRectangle 20, 20, 20, 20"
-                            Margin="10, 5, 0, 0"
-                            Stroke="#1d64cd"
-                            StrokeThickness="4">
-                        <Button Text="Contact Info"
-                                FontAttributes="Bold"
-                                TextColor="#1d64cd"
-                                Background="White"
-                                FontSize="15"/>
-                    </Border>
-
-                </HorizontalStackLayout>
-
-                <ScrollView HorizontalScrollBarVisibility="Always">
-                    <ListView>
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <Rectangle WidthRequest="100"
-                                           HeightRequest="50"
-                                           Fill="Red"/>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                        
-                    </ListView>
-                </ScrollView>
-            </VerticalStackLayout>
-            
-
-        </Border>
 
         <views:BottomNavigationBar Grid.Row="3"/>
 

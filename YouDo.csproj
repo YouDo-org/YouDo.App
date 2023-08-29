@@ -67,6 +67,7 @@
 	  <None Remove="Resources\Images\logo.png" />
 	  <None Remove="Resources\Images\map.png" />
 	  <None Remove="Resources\Images\repost.png" />
+	  <None Remove="Resources\Images\screenshot.png" />
 	  <None Remove="Resources\Images\share.png" />
 	  <None Remove="Resources\Images\userimage.png" />
 	</ItemGroup>
@@ -102,6 +103,9 @@
 	    <Generator>ResXFileCodeGenerator</Generator>
 	    <LastGenOutput>AppResource.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\Localization\AppResource.tr-TR.resx">
+	    <Generator></Generator>
+	  </EmbeddedResource>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -118,9 +122,6 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="MVVM\Themes\MapEventItemStyle.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="MVVM\Themes\MapImageItemStyle.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="MVVM\Themes\MapPageStyle.xaml">
