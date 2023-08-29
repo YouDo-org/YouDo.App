@@ -7,98 +7,90 @@
     <DataTemplate x:Key="MapEventItemStyle"
                   x:DataType="{x:Type model:MapEventModels}">
 
-        <SwipeView>
-            <SwipeView.LeftItems>
-                <SwipeItem Text="Save"                           
-                           BackgroundColor="LightGray"/>
-            </SwipeView.LeftItems>
-            
-            <Border HeightRequest="400"
+        <Border HeightRequest="400"
                 Margin="5"
                 StrokeShape="RoundRectangle 5, 5, 5, 5"
                 StrokeThickness="4">
 
-                <Border.Shadow>
-                    <Shadow Brush="Black"
+            <Border.Shadow>
+                <Shadow Brush="Black"
                         Radius="40"
                         Opacity="0.2"/>
-                </Border.Shadow>
+            </Border.Shadow>
 
-                <Grid BackgroundColor="White">
-                    <VerticalStackLayout>
-                        <Label Text="{Binding EventName}"
+            <Grid BackgroundColor="White">
+                <VerticalStackLayout>
+                    <Label Text="{Binding EventName}"
                        FontSize="25"
                        Margin="10, 10, 0, 0"/>
 
-                        <Label Text="{Binding EventType}"
+                    <Label Text="{Binding EventType}"
                            FontSize="15"
                            TextColor="Gray"
                            Margin="10, 0, 0, 0"/>
 
-                        <HorizontalStackLayout>
-                            <Label Text="{Binding OpenClose}"
+                    <HorizontalStackLayout>
+                        <Label Text="{Binding OpenClose}"
                                FontSize="15"
                                Margin="10, 0, 0, 0">
-                                <Label.Triggers>
-                                    <DataTrigger TargetType="Label" Binding="{Binding OpenCloseState}" Value="True">
-                                        <Setter Property="TextColor" Value="#00f200"/>
-                                    </DataTrigger>
-                                    <DataTrigger TargetType="Label" Binding="{Binding OpenCloseState}" Value="False">
-                                        <Setter Property="TextColor" Value="#d22a46"/>
-                                    </DataTrigger>
-                                </Label.Triggers>
-                            </Label>
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label" Binding="{Binding OpenCloseState}" Value="True">
+                                    <Setter Property="TextColor" Value="#00f200"/>
+                                </DataTrigger>
+                                <DataTrigger TargetType="Label" Binding="{Binding OpenCloseState}" Value="False">
+                                    <Setter Property="TextColor" Value="#d22a46"/>
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
 
-                            <Label Text="{Binding ClosingTime}"
+                        <Label Text="{Binding ClosingTime}"
                                FontSize="15"
                                Margin="10, 0, 0, 0"/>
-                        </HorizontalStackLayout>
+                    </HorizontalStackLayout>
 
-                        <HorizontalStackLayout>
+                    <HorizontalStackLayout>
 
-                            <Border StrokeShape="RoundRectangle 20, 20, 20, 20"
+                        <Border StrokeShape="RoundRectangle 20, 20, 20, 20"
                             Margin="5, 5, 0, 0"
                             StrokeThickness="4"
                             Stroke="Transparent">
-                                <Button Text="Open In Maps"
+                            <Button Text="Open In Maps"
                                 Background="#1d64cd"
                                 FontAttributes="Bold"
                                 FontSize="15"/>
-                            </Border>
+                        </Border>
 
-                            <Border StrokeShape="RoundRectangle 20, 20, 20, 20"
+                        <Border StrokeShape="RoundRectangle 20, 20, 20, 20"
                             Margin="10, 5, 0, 0"
                             Stroke="#1d64cd"
                             StrokeThickness="4">
-                                <Button Text="Contact Info"
+                            <Button Text="Contact Info"
                                 FontAttributes="Bold"
                                 TextColor="#1d64cd"
                                 Background="White"
                                 FontSize="15"/>
-                            </Border>
+                        </Border>
 
-                        </HorizontalStackLayout>
+                    </HorizontalStackLayout>
 
 
-                        <CollectionView ItemsSource="{Binding Images}"
+                    <CollectionView ItemsSource="{Binding Images}"
                                     ItemsLayout="HorizontalList"
                                     Margin="10, 0">
-                            <CollectionView.ItemTemplate>
-                                <DataTemplate x:DataType="{x:Type model:MapImage}">
-                                    <Frame Margin="4"
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="{x:Type model:MapImage}">
+                                <Frame Margin="4"
                                        Padding="0">
-                                        <Image Source="{Binding ImageUrl}"
+                                    <Image Source="{Binding ImageUrl}"
                                            HeightRequest="240"/>
-                                    </Frame>
-                                </DataTemplate>
-                            </CollectionView.ItemTemplate>
-                        </CollectionView>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
 
-
-                    </VerticalStackLayout>
-                </Grid>
-            </Border>
-        </SwipeView>
+                </VerticalStackLayout>
+            </Grid>
+        </Border>
 
     </DataTemplate>
     
