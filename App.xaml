@@ -14,6 +14,9 @@
                 <ResourceDictionary Source="MVVM/Themes/ContentStyle.xaml" />
                 <ResourceDictionary Source="MVVM/Themes/EventsContentStyle.xaml" />
                 <ResourceDictionary Source="MVVM/Themes/CommentStyle.xaml" />
+
+                <ResourceDictionary Source="MVVM/Themes/MapImageItemStyle.xaml" />
+                <ResourceDictionary Source="MVVM/Themes/MapEventItemStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

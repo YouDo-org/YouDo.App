@@ -22,7 +22,7 @@ public static class MauiProgram {
             .ConfigureFonts(fonts => {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                fonts.AddFont("Roboto-Regular.tff", "RobotoRegular");
+                fonts.AddFont("Roboto-Regular.tff", "Roboto");
                 fonts.AddFont("Pacifico-Regular.tff", "PacificoRegular");
                 fonts.AddFont("Lobster-Regular.ttf", "LobsterRegular");
             })

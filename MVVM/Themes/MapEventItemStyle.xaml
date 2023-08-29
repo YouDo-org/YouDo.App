@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:model="clr-namespace:YouDo.MVVM.Model.MapModels">
+
+    <DataTemplate x:Key="MapEventItemStyle"
+                  x:DataType="{x:Type model:MapEventModels}">
+
+        <Border HeightRequest="100"
+                Margin="5"
+                StrokeShape="RoundRectangle 5, 5, 5, 5"
+                StrokeThickness="4">
+
+            <Border.Shadow>
+                <Shadow Brush="Black"
+                        Radius="40"
+                        Opacity="0.2"/>
+            </Border.Shadow>
+
+            <Grid BackgroundColor="White">
+                <VerticalStackLayout>
+                    <Label Text="Event Name"
+                       FontSize="25"
+                       Margin="10, 10, 0, 0"/>
+
+                    <Label Text="Type"
+                       FontSize="15"
+                       TextColor="Gray"
+                       Margin="10, 0, 0, 0"/>
+
+                    <HorizontalStackLayout>
+                        <Label Text="Open"
+                       FontSize="15"
+                       TextColor="#00f200"
+                       Margin="10, 0, 0, 0"/>
+
+                        <Label Text="Closing Time: 00:00"
+                       FontSize="15"
+                       Margin="10, 0, 0, 0"/>
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+            </Grid>
+        </Border>
+
+    </DataTemplate>
+    
+</ResourceDictionary>
