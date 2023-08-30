@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YouDo.MVVM.View.MainViews.BlogViews.BlogPage"
+             xmlns:res="clr-namespace:YouDo.Resources.Localization"
+             xmlns:model="clr-namespace:YouDo.MVVM.Model.MainModels.BlogModels"
+             xmlns:viewmodel="clr-namespace:YouDo.MVVM.ViewModel.MainViewModels.BlogViewModels"
+             xmlns:views="clr-namespace:YouDo.MVVM.View.MainViews"
+             x:DataType="viewmodel:BlogViewModel"
+             Title=""
+             Shell.NavBarIsVisible="False"
+             Background="{StaticResource BackgroundLight}">
+
+    <ContentPage.Resources>
+        <Style TargetType="SearchBar">
+            <Setter Property="BackgroundColor" Value="#F4F4F4" />
+            <Setter Property="TextColor" Value="#333333" />
+            <Setter Property="PlaceholderColor" Value="#999999" />
+            <Setter Property="Placeholder" Value="Search" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="CancelButtonColor" Value="#666666" />
+            <Setter Property="Margin" Value="5, 0"/>
+            <Setter Property="WidthRequest" Value="332"/>
+        </Style>
+    </ContentPage.Resources>
+    
+    <Grid RowDefinitions="50, Auto, *, 50">
+
+        <views:TopNavigationBar Grid.Row="0"/>
+
+        <HorizontalStackLayout Background="White"
+                               HeightRequest="50"
+                               HorizontalOptions="FillAndExpand"
+                               Grid.Row="1">
+
+            <Border StrokeThickness="4"
+                    StrokeShape="RoundRectangle 10,10,10,10"
+                    Background="Gray">
+                <SearchBar Placeholder="Search user, article"/>
+            </Border>
+
+            <ImageButton Source="writeblog.png"
+                         WidthRequest="30"
+                         HeightRequest="30"
+                         HorizontalOptions="End"
+                         Command="{Binding GoToWriteBlogPageAsyncCommand}"/>
+
+        </HorizontalStackLayout>
+
+        <CollectionView ItemsSource="{Binding BlogContents}"
+                        ItemTemplate="{StaticResource BlogContentView}"
+                        Grid.Row="2"
+                        Background="LightGray"
+                        VerticalOptions="End"
+                        VerticalScrollBarVisibility="Always"/>
+
+        <views:BottomNavigationBar Grid.Row="3"/>
+
+    </Grid>
+</ContentPage>

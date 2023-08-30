@@ -61,6 +61,24 @@ namespace YouDo.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Closing Time:.
+        /// </summary>
+        internal static string ClosingTime {
+            get {
+                return ResourceManager.GetString("ClosingTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to + Follow.
+        /// </summary>
+        internal static string Follow {
+            get {
+                return ResourceManager.GetString("Follow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Already have an account?.
         /// </summary>
         internal static string ForgotPasswordAlreadyHaveAnAccount {

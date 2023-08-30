@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="YouDo.MVVM.View.MainViews.BlogPage"
+             x:Class="YouDo.MVVM.View.MainViews.MapPage"
              xmlns:res="clr-namespace:YouDo.Resources.Localization"
              xmlns:viewmodel="clr-namespace:YouDo.MVVM.ViewModel.MainViewModels"
              xmlns:views="clr-namespace:YouDo.MVVM.View.MainViews"
-             x:DataType="viewmodel:BlogViewModel"
-             Title=""
+             x:DataType="viewmodel:MapViewModel"
              Shell.NavBarIsVisible="False"
              Background="{StaticResource BackgroundLight}">
 
@@ -14,12 +13,12 @@
 
         <views:TopNavigationBar Grid.Row="0"/>
 
-        <Label Grid.Row="1"
-            Text="Blog"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
 
-        <views:BottomNavigationBar Grid.Row="2"/>
+        <CollectionView Grid.Row="1"
+                        ItemsSource="{Binding MapEventModels}"
+                        ItemTemplate="{StaticResource MapEventItemStyle}"/>
+
+        <views:BottomNavigationBar Grid.Row="3"/>
 
     </Grid>
 </ContentPage>

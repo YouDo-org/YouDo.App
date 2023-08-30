@@ -14,26 +14,17 @@ public partial class EntrancePageViewModel : BaseViewModel {
 
     [RelayCommand]
     async Task MoveToForgotPasswordAsync() {
-        /*ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
-        forgotPasswordPage.BindingContext = this;
-
-        await Application.Current.MainPage.Navigation.PushAsync(forgotPasswordPage);*/
         await Shell.Current.GoToAsync(nameof(ForgotPasswordPage), true,
             new Dictionary<string, object> {
-                {"UserInfoModel", this.UserInfoModel}
+                {"UserInfoModel", UserInfoModel}
             });
     }
 
     [RelayCommand]
     async Task MoveToCreateNewAccount() {
-        /*CreateNewAccountPage createNewAccountPage = new CreateNewAccountPage();
-        createNewAccountPage.BindingContext = this;
-
-        await Application.Current.MainPage.Navigation.PushAsync(createNewAccountPage);*/
-
         await Shell.Current.GoToAsync(nameof(CreateNewAccountPage), true,
             new Dictionary<string, object> {
-                {"UserInfoModel", this.UserInfoModel}
+                {"UserInfoModel", UserInfoModel}
             });
     }
 

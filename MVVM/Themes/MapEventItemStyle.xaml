@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:model="clr-namespace:YouDo.MVVM.Model.MapModels">
+
+    <!-- TODO: ADD LIKE UI-->
+    <!-- TODO: ADD SHARE SYSTEM-->
+    <!-- TODO: ADD NAVIGATION TO PROFILE-->
+    
+    <DataTemplate x:Key="MapEventItemStyle"
+                  x:DataType="{x:Type model:MapEventModels}">
+
+        <Border Margin="5"
+                StrokeShape="RoundRectangle 5, 5, 5, 5"
+                StrokeThickness="4">
+
+            <Border.Shadow>
+                <Shadow Brush="Black"
+                        Radius="40"
+                        Opacity="0.2"/>
+            </Border.Shadow>
+
+            <Grid BackgroundColor="White">
+
+                <Button HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start"
+                        HeightRequest="90"
+                        BackgroundColor="#f2f2f2"
+                        Command="{Binding OpenProfileCommand}"/>
+
+                <VerticalStackLayout>
+                    <Label Text="{Binding EventName}"
+                       FontSize="25"
+                       Margin="10, 10, 0, 0"/>
+
+                    <Label Text="{Binding EventType}"
+                           FontSize="15"
+                           TextColor="Gray"
+                           Margin="10, 0, 0, 0"/>
+
+                    <HorizontalStackLayout>
+                        <Label Text="{Binding OpenClose}"
+                               FontSize="15"
+                               Margin="10, 0, 0, 0">
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label" Binding="{Binding OpenCloseState}" Value="True">
+                                    <Setter Property="TextColor" Value="#00f200"/>
+                                </DataTrigger>
+                                <DataTrigger TargetType="Label" Binding="{Binding OpenCloseState}" Value="False">
+                                    <Setter Property="TextColor" Value="#d22a46"/>
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+
+                        <Label Text="{Binding ClosingTime}"
+                               FontSize="15"
+                               Margin="10, 0, 0, 0"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+
+                        <Border StrokeShape="RoundRectangle 20, 20, 20, 20"
+                            Margin="5, 5, 0, 0"
+                            StrokeThickness="4"
+                            Stroke="Transparent">
+                            <Button Text="Open In Maps"
+                                Background="#1d64cd"
+                                FontAttributes="Bold"
+                                FontSize="15"/>
+                        </Border>
+
+                        <Border StrokeShape="RoundRectangle 20, 20, 20, 20"
+                            Margin="10, 5, 0, 0"
+                            Stroke="#1d64cd"
+                            StrokeThickness="4">
+                            <Button Text="Contact Info"
+                                FontAttributes="Bold"
+                                TextColor="#1d64cd"
+                                Background="White"
+                                FontSize="15"/>
+                        </Border>
+
+                    </HorizontalStackLayout>
+
+
+                    <CollectionView ItemsSource="{Binding Images}"
+                                    ItemsLayout="HorizontalList"
+                                    Margin="10, 0">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="{x:Type model:MapImage}">
+                                <Frame Margin="4"
+                                       Padding="0">
+                                    <Image Source="{Binding ImageUrl}"
+                                           HeightRequest="240"/>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                    <Rectangle Style="{StaticResource Separator}"/>
+
+                    <HorizontalStackLayout Spacing="15"
+                                           Margin="15, 0, 15, 0">
+                        <ImageButton Style="{StaticResource CommandImageButton}" Source="like.png" />
+                        <ImageButton Style="{StaticResource CommandImageButton}" Source="comment.png"
+                                     Command="{Binding ChangeCommentVisibilityCommand}"/>
+                        <ImageButton Style="{StaticResource CommandImageButton}" Source="share.png"/>
+                    </HorizontalStackLayout>
+
+                    <CollectionView ItemsSource="{Binding Comments}"
+                                    ItemTemplate="{StaticResource CommentStyle}"
+                                    Style="{StaticResource CommentsCollection}"
+                                    IsVisible="{Binding CommentVisibility}"
+                                    VerticalScrollBarVisibility="Always"/>
+                </VerticalStackLayout>
+            </Grid>
+        </Border>
+
+    </DataTemplate>
+    
+</ResourceDictionary>

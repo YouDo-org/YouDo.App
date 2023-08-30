@@ -60,10 +60,15 @@
 	  <None Remove="Resources\Fonts\Pacifico-Regular.ttf" />
 	  <None Remove="Resources\Images\blog.png" />
 	  <None Remove="Resources\Images\campaigns.png" />
+	  <None Remove="Resources\Images\comment.png" />
 	  <None Remove="Resources\Images\create.png" />
 	  <None Remove="Resources\Images\events.png" />
+	  <None Remove="Resources\Images\like.png" />
 	  <None Remove="Resources\Images\logo.png" />
 	  <None Remove="Resources\Images\map.png" />
+	  <None Remove="Resources\Images\repost.png" />
+	  <None Remove="Resources\Images\screenshot.png" />
+	  <None Remove="Resources\Images\share.png" />
 	  <None Remove="Resources\Images\userimage.png" />
 	</ItemGroup>
 
@@ -80,7 +85,7 @@
 	  <Compile Update="MVVM\View\EntranceViews\CreateNewAccountPage.xaml.cs">
 	    <DependentUpon>CreateNewAccountPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="MVVM\View\MainViews\MapPage.xaml.cs">
+	  <Compile Update="MVVM\View\MainViews\MapViews\MapPage.xaml.cs">
 	    <DependentUpon>MapPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="MVVM\View\MainViews\BottomNavigationBar.xaml.cs">
@@ -98,9 +103,27 @@
 	    <Generator>ResXFileCodeGenerator</Generator>
 	    <LastGenOutput>AppResource.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\Localization\AppResource.tr-TR.resx">
+	    <Generator></Generator>
+	  </EmbeddedResource>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="MVVM\Themes\BlogContentStyle.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\Themes\CommentStyle.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\Themes\ContentStyle.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\Themes\EventsContentStyle.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\Themes\MapEventItemStyle.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="MVVM\Themes\MapPageStyle.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -119,25 +142,28 @@
 	  <MauiXaml Update="MVVM\View\EntranceViews\CreateNewAccountPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MVVM\View\MainViews\BlogPage.xaml">
+	  <MauiXaml Update="MVVM\View\MainViews\BlogViews\BlogPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MVVM\View\MainViews\CampaignsPage.xaml">
+	  <MauiXaml Update="MVVM\View\MainViews\BlogViews\BlogWritePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MVVM\View\MainViews\CreatePage.xaml">
+	  <MauiXaml Update="MVVM\View\MainViews\CampaignsViews\CampaignsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MVVM\View\MainViews\EventsPage.xaml">
+	  <MauiXaml Update="MVVM\View\MainViews\CreateViews\CreatePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MVVM\View\MainViews\MapPage.xaml">
+	  <MauiXaml Update="MVVM\View\MainViews\EventsViews\EventsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\View\MainViews\MapViews\MapPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="MVVM\View\MainViews\BottomNavigationBar.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MVVM\View\MainViews\ProfilePage.xaml">
+	  <MauiXaml Update="MVVM\View\MainViews\ProfileViews\ProfilePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="MVVM\View\MainViews\TopNavigationBar.xaml">

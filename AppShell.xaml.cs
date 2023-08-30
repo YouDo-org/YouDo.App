@@ -1,13 +1,13 @@
 ﻿using YouDo.MVVM.View;
 using YouDo.MVVM.View.EntranceView;
 using YouDo.MVVM.View.MainViews;
+using YouDo.MVVM.View.MainViews.BlogViews;
 
 namespace YouDo;
 
 public partial class AppShell : Shell {
 	public AppShell() {
 		InitializeComponent();
-
         Routing.RegisterRoute(nameof(EntrancePage), typeof(EntrancePage));
         Routing.RegisterRoute(nameof(ForgotPasswordPage), typeof(ForgotPasswordPage));
         Routing.RegisterRoute(nameof(CreateNewAccountPage), typeof(CreateNewAccountPage));

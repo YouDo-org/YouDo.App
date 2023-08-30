@@ -16,7 +16,7 @@ public partial class CreateNewAccountViewModel : BaseViewModel{
 
     [RelayCommand]
     async Task MoveToEntranceAsync() {
-        await Shell.Current.GoToAsync($"../../{nameof(EntrancePage)}", true);
+        await Shell.Current.GoToAsync($"{nameof(EntrancePage)}", true);
     }
 
     [RelayCommand]
@@ -40,15 +40,15 @@ public partial class CreateNewAccountViewModel : BaseViewModel{
         }
     }
 
+    /// <summary>
+    /// Checking password strenght asynchronously.
+    /// </summary>
+    /// <returns>true if the password is strong enough else false.</returns>
     public async Task<bool> CheckPasswordStrengthAsync() {
 
         var hasNumber = new Regex(@"[0-9]+");
         var hasUpperChar = new Regex(@"[A-Z]+");
         var hasMinimum8Chars = new Regex(@".{8,}");
-
-        Debug.WriteLine("------------------");
-        Debug.WriteLine(UserInfoModel);
-        Debug.WriteLine("------------------");
 
         if (UserInfoModel.Password != UserInfoModel.Password2) {
             await Shell.Current.DisplayAlert("Password", "Passwords Doesn't Match", "OK");
