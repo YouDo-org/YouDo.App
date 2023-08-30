@@ -1,10 +1,12 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YouDo.MVVM.Model.MainModels;
 using YouDo.Resources.Localization;
 
 namespace YouDo.MVVM.Model.MapModels {
@@ -16,6 +18,7 @@ namespace YouDo.MVVM.Model.MapModels {
     }
 
     public partial class MapEventModels : ObservableObject{
+        // TODO: ADD SHARE SYSTEM
 
         [ObservableProperty]
         private string eventName;
@@ -25,6 +28,9 @@ namespace YouDo.MVVM.Model.MapModels {
 
         [ObservableProperty]
         private bool openCloseState;
+
+        [ObservableProperty]
+        private int likes = 0;
 
         public string OpenClose { 
             get {
@@ -40,6 +46,12 @@ namespace YouDo.MVVM.Model.MapModels {
 
         private DateTime _closingTime;
 
+        [ObservableProperty]
+        bool commentVisibility = false;
+
+        [ObservableProperty]
+        ObservableCollection<CommentModule> comments;
+
 
         [ObservableProperty]
         private ObservableCollection<MapImage> images = new();
@@ -54,6 +66,27 @@ namespace YouDo.MVVM.Model.MapModels {
             for (int i = 0; i < 5; i++) {
                 images.Add(new MapImage { ImageUrl = "screenshot" });
             }
+
+            comments = new ObservableCollection<CommentModule> {
+                new CommentModule("Alex", "Developer", "Nice Bro !!!", DateTime.Now, "userimage.png"),
+                new CommentModule("Alice", "Writer", "O yeah", new DateTime(2023, 7, 10, 18, 5, 0), "userimage.png"),
+                new CommentModule("Jim", "Editor","Thanks", new DateTime(2023, 7, 10), "userimage.png")
+            };
+        }
+
+        [RelayCommand]
+        private void Like() {
+            // TODO: ADD LIKE
+        }
+
+        [RelayCommand]
+        private void OpenProfile() {
+            // TODO: ADD NAVIGATION TO PROFILE
+        }
+
+        [RelayCommand]
+        void ChangeCommentVisibility() {
+            CommentVisibility = !CommentVisibility;
         }
 
     }

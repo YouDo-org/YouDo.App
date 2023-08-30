@@ -5,6 +5,10 @@
                     xmlns:res="clr-namespace:YouDo.Resources.Localization"
                     xmlns:model="clr-namespace:YouDo.MVVM.Model.MainModels">
 
+    <!-- TODO: ADD SHARE-->
+    <!-- TODO: ADD LIKE-->
+    <!-- TODO: ADD REPOST-->
+    
     <DataTemplate x:Key="BlogContentView"
                   x:DataType="{x:Type model:BlogContentModel}">
 
@@ -68,7 +72,9 @@
             <CollectionView ItemsSource="{Binding Comments}"
                             ItemTemplate="{StaticResource CommentStyle}"
                             Style="{StaticResource CommentsCollection}"
-                            IsVisible="{Binding CommentVisibility}"/>
+                            IsVisible="{Binding CommentVisibility}"
+                            VerticalScrollBarVisibility="Always"/>
+
 
         </VerticalStackLayout>
 

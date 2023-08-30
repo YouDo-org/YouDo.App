@@ -11,6 +11,10 @@ public partial class BlogContentModel : BaseContentModel{
     /// Sub class of BaseContentModel
     /// Blog content includes other related informations like blog content text, visibility of comments, comments (another data type).
     /// </summary>
+    
+    // TODO: ADD LIKE
+    // TODO: ADD SHARE
+    // TODO: ADD REPOST
 
     [ObservableProperty]
     string content = "";
